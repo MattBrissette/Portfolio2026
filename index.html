@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -151,10 +151,9 @@
     
     <!-- Desktop Navigation Buttons -->
     <div class="hidden md:flex items-center gap-3 md:gap-4 pointer-events-auto">
-      <!-- CONCEPT 1: Minimalist INDEX [08] Architectural Catalog Overlay Trigger -->
       <button id="nav-index" class="flex items-center gap-2 md:gap-3 group px-4 md:px-5 py-2 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
         <i data-lucide="grid" class="w-3.5 h-3.5 text-orange-500 group-hover:text-black transition-colors"></i>
-        <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">INDEX [08]</span>
+        <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">INDEX [09]</span>
       </button>
 
       <button id="nav-contact" class="flex items-center gap-3 group px-5 py-2 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
@@ -175,7 +174,7 @@
     <button id="mobile-nav-index" class="w-full flex items-center justify-between p-3.5 border border-zinc-800 bg-zinc-900/60 hover:border-orange-500 text-zinc-100 font-mono-space text-xs tracking-widest uppercase transition-colors">
       <div class="flex items-center gap-3">
         <i data-lucide="grid" class="w-4 h-4 text-orange-500"></i>
-        <span>INDEX CATALOG [08]</span>
+        <span>INDEX CATALOG [09]</span>
       </div>
       <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
     </button>
@@ -200,9 +199,9 @@
   <!-- Left Sidebar / Scroll Progress Status -->
   <div class="absolute left-6 md:left-8 bottom-8 z-30 flex flex-col items-start gap-4 pointer-events-none">
     <div class="flex items-end gap-3 pointer-events-auto">
-      <span class="text-3xl md:text-5xl font-syne font-extrabold leading-none text-orange-500" id="active-num">08</span>
+      <span class="text-3xl md:text-5xl font-syne font-extrabold leading-none text-orange-500" id="active-num">09</span>
       <div class="flex flex-col pb-1">
-        <span class="text-[9px] font-mono-space tracking-wider text-zinc-600 uppercase" id="active-category-label">WEBSITE</span>
+        <span class="text-[9px] font-mono-space tracking-wider text-zinc-600 uppercase" id="active-category-label">SAAS</span>
         <span class="text-xs font-mono-space font-medium tracking-tight text-zinc-300" id="active-title-label">MCIM</span>
       </div>
     </div>
@@ -248,13 +247,11 @@
         <p class="text-base text-zinc-500 font-mono-space" id="drawer-tagline">Tagline</p>
       </div>
 
-      <!-- Cover image (Fully Fluid Dynamic Layout with Expand Affordance) -->
+      <!-- Cover image -->
       <div class="relative group mx-8 rounded-none overflow-hidden bg-zinc-900 flex justify-center items-center border border-zinc-800 cursor-pointer" id="drawer-cover">
         <div id="drawer-cover-media" class="w-full flex justify-center items-center">
-          <!-- filled by JS dynamically -->
         </div>
 
-        <!-- Fullscreen Expand Prompt Overlay -->
         <div class="absolute bottom-3 right-3 px-3 py-1.5 bg-[#0f1114]/90 backdrop-blur border border-zinc-700 group-hover:border-orange-500 text-zinc-300 group-hover:text-orange-500 transition-all duration-300 flex items-center gap-2 pointer-events-none select-none shadow-xl">
           <span class="text-[9px] font-mono-space tracking-widest font-bold uppercase">EXPAND VIEW</span>
           <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -263,11 +260,10 @@
         </div>
       </div>
 
-      <!-- Gallery row - Fits nicely with 7 columns -->
+      <!-- Gallery row -->
       <div class="px-8 pt-6" id="drawer-images-section" style="display:none;">
         <p class="text-[10px] font-mono-space text-zinc-500 block uppercase tracking-widest mb-3">Project Gallery</p>
         <div class="grid grid-cols-7 gap-2.5 w-full" id="drawer-images-grid">
-          <!-- filled by JS -->
         </div>
       </div>
 
@@ -302,13 +298,13 @@
     </div>
   </div>
 
-  <!-- CONCEPT 1: INDEX [08] Minimalist Architectural Catalog Overlay -->
+  <!-- INDEX [09] Minimalist Architectural Catalog Overlay -->
   <div id="index-overlay" class="fixed inset-0 z-[80] bg-[#0b0c0e]/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col justify-between p-6 md:p-12 text-zinc-100 overflow-hidden">
     <!-- Overlay Top Bar -->
     <div class="flex justify-between items-center border-b border-zinc-800/80 pb-6 shrink-0">
       <div class="flex items-center gap-3">
         <span class="inline-block w-2.5 h-2.5 bg-orange-500"></span>
-        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">PROJECTS INDEX // 08 — 01</span>
+        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">PROJECTS INDEX // 09 — 01</span>
       </div>
       <button id="close-index" class="flex items-center gap-2 px-4 py-2 border border-zinc-700 hover:border-orange-500 rounded-none text-zinc-300 hover:text-orange-500 font-mono-space text-xs transition-colors">
         <span>CLOSE</span> <i data-lucide="x" class="w-4 h-4"></i>
@@ -329,7 +325,6 @@
           </tr>
         </thead>
         <tbody id="index-table-body" class="divide-y divide-zinc-800/60">
-          <!-- Rows injected dynamically via JavaScript -->
         </tbody>
       </table>
     </div>
@@ -347,13 +342,13 @@
     <div class="border-t border-zinc-800/80 pt-4 flex flex-col md:flex-row justify-between text-[10px] font-mono-space text-zinc-500 shrink-0 gap-2">
       <span class="flex items-center gap-2">
         <span class="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></span>
-        SELECT ANY ROW TO INITIATE 3D VECTOR CAMERA FLY-IN & activate SPECIFICATIONS
+        SELECT ANY ROW TO INITIATE 3D VECTOR CAMERA FLY-IN & ACTIVATE SPECIFICATIONS
       </span>
       <span>PRESS [I] OR [ESC] TO TOGGLE CATALOG</span>
     </div>
   </div>
 
-  <!-- Absolute Fallback Info Modal for About & Contact -->
+  <!-- Info Modal for About & Contact -->
   <div id="info-modal" class="fixed inset-0 bg-black/90 backdrop-blur z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-4 select-text">
     <div class="bg-[#0f1114] max-w-md w-full rounded-none p-6 md:p-8 border border-zinc-800 shadow-2xl space-y-6">
       <div class="flex justify-between items-start">
@@ -363,7 +358,6 @@
         </button>
       </div>
       <div id="info-modal-content" class="text-sm text-zinc-400 font-mono-space leading-relaxed space-y-4">
-        <!-- Content injected dynamically -->
       </div>
     </div>
   </div>
@@ -377,6 +371,7 @@
     <div class="w-[1px] h-8 bg-orange-500 mt-0"></div>
   </div>
 
+  <!-- Fullscreen Lightbox Modal -->
   <div id="lightbox-modal" class="fixed inset-0 backdrop-blur-md z-[100] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" style="background-color: rgba(5, 6, 8, 0.98);">
     <button id="close-lightbox" class="absolute top-6 right-8 flex items-center gap-1.5 px-4 py-2 bg-zinc-900 text-zinc-100 border border-zinc-700 hover:bg-orange-500 hover:text-black hover:border-orange-500 rounded-none transition-all duration-200 text-xs font-mono-space z-[110] shadow-2xl">
       CLOSE <i data-lucide="x" class="w-3.5 h-3.5 inline-block"></i>
@@ -398,7 +393,6 @@
   </div>
 
   <script>
-    // Show loading screen text immediately
     const loadingScreen = document.getElementById('loading-screen');
     const loadingInner = document.getElementById('loading-inner');
     if (loadingInner) {
@@ -418,9 +412,7 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    /* =========================================================================
-       GLOBAL DOM ELEMENT DECLARATIONS
-       ========================================================================= */
+    /* Global DOM Element Declarations */
     const cursor = document.getElementById('custom-cursor');
     const cursorDot = document.getElementById('custom-cursor-dot');
     const activeNum = document.getElementById('active-num');
@@ -517,35 +509,20 @@
       });
     }
 
+    /* Updated Project Sequence:
+       01 CargoSprint
+       02 Oatfi
+       03 BadCarbon
+       04 CaRMS
+       05 @Geostories
+       06 TrailerTrader
+       07 RocketAir
     /* =========================================================================
-       PROJECT DATA CONFIGURATION
+       PROJECT DATA CONFIGURATION (9 Projects Total)
        ========================================================================= */
     const projects = [
       {
         num: "01",
-        title: "CaRMS",
-        tagline: "National residency match algorithm & platform interface",
-        client: "CaRMS",
-        services: "UX, Product Design, Design System",
-        desc: "Challenge:\nCaRMS' platform had grown increasingly complex, making it difficult to maintain, scale, and communicate across multiple stakeholders. The residency matching process relied on sophisticated algorithms and workflows, but the user experience and internal systems struggled to keep pace, creating friction for applicants, medical schools, and administrators.\n\nSolution:\nWe simplified the login and registration experience, reducing friction for new and returning users, while redesigning the program management workflow to make updating residency program information faster, more intuitive, and easier to maintain. The result was a more efficient platform for both applicants and administrators, built to support future growth and ongoing content management.",
-        colors: ["#02343f", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "HEALTHCARE",
-        tech: ["React Platform", "Algorithmic Sorting", "Tailwind CSS", "High-Contrast UI"],
-        date: "2023",
-        images: [
-          "https://x02.me/i/QPWBG.webp",
-          "https://x02.me/i/VVVG2.webp",
-          "https://x02.me/i/4P2Z.webp",
-          "https://x02.me/i/FWMGY.webp",
-          "https://x02.me/i/2GFVJ.webp",
-          "https://x02.me/i/UAF9R.webp",
-          "https://mbrissette.x02.me/i/RPMT.webp",
-          "https://mbrissette.x02.me/i/P9UDCZ.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "02",
         title: "CargoSprint",
         tagline: "Supply Chain Orchestration Platform",
         client: "CargoSprint",
@@ -568,7 +545,7 @@
         link: ""
       },
       {
-        num: "03",
+        num: "02",
         title: "Oatfi",
         tagline: "B2B payment & embedded capital infrastructure",
         client: "Oatfi",
@@ -591,30 +568,30 @@
         link: ""
       },
       {
-        num: "04",
-        title: "TrailerTrader",
-        tagline: "The largest dedicated online marketplaces for commercial and utility trailers in the USA.",
-        client: "TrailerTrader",
-        services: "UX, Art Direction, Product Design",
-        desc: "Challenge:\nAs TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.\n\nSolutions:\nThe new platform delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. It created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.",
-        colors: ["#020914", "#291a10", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "MARKETPLACE",
-        tech: ["WebXR", "ThreeJS", "Rust WebAssembly", "Tailwind CSS"],
-        date: "2022",
+        num: "03",
+        title: "CaRMS",
+        tagline: "National residency match algorithm & platform interface",
+        client: "CaRMS",
+        services: "UX, Product Design, Design System",
+        desc: "Challenge:\nCaRMS' platform had grown increasingly complex, making it difficult to maintain, scale, and communicate across multiple stakeholders. The residency matching process relied on sophisticated algorithms and workflows, but the user experience and internal systems struggled to keep pace, creating friction for applicants, medical schools, and administrators.\n\nSolution:\nWe simplified the login and registration experience, reducing friction for new and returning users, while redesigning the program management workflow to make updating residency program information faster, more intuitive, and easier to maintain. The result was a more efficient platform for both applicants and administrators, built to support future growth and ongoing content management.",
+        colors: ["#02343f", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
+        tag: "HEALTHCARE",
+        tech: ["React Platform", "Algorithmic Sorting", "Tailwind CSS", "High-Contrast UI"],
+        date: "2023",
         images: [
-          "https://x02.me/i/D6BN2.webp",
-          "https://x02.me/i/7CZY.webp",
-          "https://x02.me/i/AZXWA.webp",
-          "https://x02.me/i/FY92.webp",
-          "https://x02.me/i/TN56VD.webp",
-          "https://x02.me/i/WWUV9J.webp",
-          "https://mbrissette.x02.me/i/UN463.webp",
-          "https://mbrissette.x02.me/i/T295H.webp"
+          "https://x02.me/i/QPWBG.webp",
+          "https://x02.me/i/VVVG2.webp",
+          "https://x02.me/i/4P2Z.webp",
+          "https://x02.me/i/FWMGY.webp",
+          "https://x02.me/i/2GFVJ.webp",
+          "https://x02.me/i/UAF9R.webp",
+          "https://mbrissette.x02.me/i/RPMT.webp",
+          "https://mbrissette.x02.me/i/P9UDCZ.webp"
         ],
         link: ""
       },
       {
-        num: "05",
+        num: "04",
         title: "BadCarbon",
         tagline: "B2B carbon management & sustainability interface",
         client: "BadCarbon",
@@ -632,17 +609,86 @@
           "https://mbrissette.x02.me/i/C6NJ.webp",
           "https://mbrissette.x02.me/i/SCV98.webp",
           "https://mbrissette.x02.me/i/XWS9.webp",
-          "https://mbrissette.x02.me/i/GS8CZU.webp"
+          "https://mbrissette.x02.me/i/7ZCWT.gif"
+        ],
+        link: ""
+      },
+      {
+        num: "05",
+        title: "@Geostories",
+        tagline: "A location-aware social media campaign that rewarded exploration with contextual stories.",
+        client: "@Geostories",
+        services: "Strategy, Art Direction, Design, Animation",
+        desc: "Young Canadians are passionate about experiential travel and sharing memorable moments on Instagram. We identified Canada's most frequently geotagged locations, researched hundreds of location-specific stories, and built a system that automatically delivered relevant historical facts whenever users tagged one of those destinations.\n\nGold, WARC Awards, Effective Social Strategy, 2019\n— WARC Awards 2019\n\nQuirky Instagram history project could hold a lesson for digital marketers\n— The Globe and Mail\n\nBoring product + no budget = effective social campaign\n— WARC\n\n6.3M impressions\n95% positive sentiment on Instagram",
+        colors: ["#0f2027", "#203a43", "#2c5364", "#00d2ff", "#ffffff"],
+        tag: "SOCIAL MEDIA CAMPAIGN",
+        tech: ["Mapbox GL", "Three.js", "React", "Tailwind CSS"],
+        date: "2019",
+        images: [
+          "https://mbrissette.x02.me/i/E8XGWM.gif",
+          "https://mbrissette.x02.me/i/D56JN.webp",
+          "https://mbrissette.x02.me/i/SQWEPH.webp",
+          "https://mbrissette.x02.me/i/WXSGW.webp",
+          "https://mbrissette.x02.me/i/2DDJRP.webp",
+          "https://mbrissette.x02.me/i/XN23K8.webp",
+          "https://mbrissette.x02.me/i/47GZM.webp",
+          "https://mbrissette.x02.me/i/ZFAW.webp"
         ],
         link: ""
       },
       {
         num: "06",
+        title: "TrailerTrader",
+        tagline: "The largest dedicated online marketplaces for commercial and utility trailers in the USA.",
+        client: "TrailerTrader",
+        services: "UX, Art Direction, Product Design",
+        desc: "Challenge:\nAs TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.\n\nSolutions:\nWe created a comprehensive design system, a new dashboard for dealers, and delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. It created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.",
+        colors: ["#020914", "#291a10", "#dfb76c", "#ffd700", "#ffffff"],
+        tag: "MARKETPLACE",
+        tech: ["WebXR", "ThreeJS", "Rust WebAssembly", "Tailwind CSS"],
+        date: "2022",
+        images: [
+          "https://x02.me/i/D6BN2.webp",
+          "https://x02.me/i/7CZY.webp",
+          "https://x02.me/i/AZXWA.webp",
+          "https://x02.me/i/FY92.webp",
+          "https://x02.me/i/TN56VD.webp",
+          "https://x02.me/i/WWUV9J.webp",
+          "https://mbrissette.x02.me/i/UN463.webp",
+          "https://mbrissette.x02.me/i/T295H.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "07",
+        title: "RocketAir",
+        tagline: "Design & motion studio digital experience",
+        client: "RocketAir",
+        services: "UX, Art Direction, Design",
+        desc: "A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.\n\nhttps://www.rocketair.com/",
+        colors: ["#0a0f1d", "#1e1a12", "#dfb76c", "#ffd700", "#0e1834"],
+        tag: "DESIGN STUDIO",
+        tech: ["Design Systems", "Product Strategy", "Motion Graphics", "3D & WebGL"],
+        date: "2022",
+        images: [
+          "https://mbrissette.x02.me/i/YQKSH.webp",
+          "https://mbrissette.x02.me/i/EUDDG.gif",
+          "https://mbrissette.x02.me/i/T4G7YG.webp",
+          "https://mbrissette.x02.me/i/J476CC.webp",
+          "https://mbrissette.x02.me/i/48KMST.webp",
+          "https://mbrissette.x02.me/i/EY6GR.webp",
+          "https://mbrissette.x02.me/i/R9ENXQ.webp",
+          "https://mbrissette.x02.me/i/XT3A.webp"
+        ],
+        link: "https://www.rocketair.com/"
+      },
+      {
+        num: "08",
         title: "3D Cinematic Experience",
         tagline: "Designed to help visitors explore Larus' products through intuitive navigation, interactive storytelling, and real-time 3D graphics.",
         client: "Larus",
         services: "UX, Art Direction, Design, 3d",
-        desc: "Trade show conversations are short, and complex enterprise software is difficult to communicate in a few minutes. To bridge that gap, I created an interactive 3D exhibition experience that combines storytelling, product demonstrations, downloadable resources, and lead generation into a single immersive experience accessible from any browser.",
+        desc: "Trade show conversations are short, and complex enterprise software is difficult to communicate in a few minutes. To bridge that gap, I created an interactive 3D exhibition experience (with Gemini 3.5 & Claude) that combines storytelling, product demonstrations, downloadable resources, and lead generation into a single immersive experience accessible from any browser.\n\nhttps://mattbrissette.github.io/3d_booth/",
         colors: ["#141412", "#2e281e", "#dfb76c", "#ffd700", "#ffffff"],
         tag: "WebGL, Threejs",
         tech: ["Three.js", "GSAP", "GLSL Shaders", "Fluid Dynamics", "Creative Direction"],
@@ -660,30 +706,7 @@
         link: ""
       },
       {
-        num: "07",
-        title: "RocketAir",
-        tagline: "Design & motion studio digital experience",
-        client: "RocketAir",
-        services: "Brand Experience, Digital Product Design, Motion",
-        desc: "A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.",
-        colors: ["#0a0f1d", "#1e1a12", "#dfb76c", "#ffd700", "#0e1834"],
-        tag: "DESIGN STUDIO",
-        tech: ["Design Systems", "Product Strategy", "Motion Graphics", "3D & WebGL"],
-        date: "2022",
-        images: [
-          "https://mbrissette.x02.me/i/YQKSH.webp",
-          "https://mbrissette.x02.me/i/HGU8C6.webp",
-          "https://mbrissette.x02.me/i/T4G7YG.webp",
-          "https://mbrissette.x02.me/i/J476CC.webp",
-          "https://mbrissette.x02.me/i/48KMST.webp",
-          "https://mbrissette.x02.me/i/EY6GR.webp",
-          "https://mbrissette.x02.me/i/R9ENXQ.webp",
-          "https://mbrissette.x02.me/i/XT3A.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "08",
+        num: "09",
         title: "MCIM",
         tagline: "Modernizing a Mission-Critical Brand",
         client: "MCIM",
@@ -1223,7 +1246,7 @@
     borderMesh.receiveShadow = true;
     stepsGroup.add(borderMesh);
 
-    // Sphere setup
+    // Obsidian sphere setup
     const obsidianSphereMat = new THREE.MeshPhysicalMaterial({
       color: 0x070707,
       roughness: 0.02,
@@ -1255,7 +1278,7 @@
     });
 
     projects.forEach((proj, idx) => {
-      const stepIdx = Math.floor(25 + idx * 16.5);
+      const stepIdx = Math.floor(22 + idx * 14.5);
       const ratio = stepIdx / numSteps;
       const angle = ratio * Math.PI * 2 * revolutions;
       const yPos = (ratio * heightSpan) - (heightSpan / 2) + 0.68; 
@@ -1362,7 +1385,6 @@
       activeProjectMeshes.push(itemGroup);
     });
 
-    // Lighting setup
     const ambientLight = new THREE.AmbientLight(0x0d1020, 0.55);
     scene.add(ambientLight);
 
@@ -1393,7 +1415,7 @@
     let isTransitioning = false; 
     let scrollProgress = 0.07800; 
     let targetScrollProgress = 0.07800;
-    let activeProjectIndex = 7; 
+    let activeProjectIndex = 8; // Starts centered on MCIM (09)
 
     let scrollVelocity = 0.0;
     const FRICTION = 0.82;
@@ -1549,12 +1571,16 @@
 
       const targetMesh = activeProjectMeshes[index];
 
-      const localTargetPos = targetMesh.userData.origPosition.clone().add(new THREE.Vector3(0, 0, 0.45));
+      const angle = targetMesh.userData.angle;
+      const outwardX = Math.cos(angle);
+      const outwardZ = Math.sin(angle);
+
+      const localTargetPos = targetMesh.userData.origPosition.clone().add(new THREE.Vector3(outwardX * 1.40, 1.10, outwardZ * 1.40));
       const localTargetRot = targetMesh.userData.origRotation.clone();
       localTargetRot.y -= 0.12; 
       localTargetRot.x += 0.04;
 
-      const targetScroll = 0.95 - (index * 0.12457);
+      const targetScroll = 0.95 - (index * 0.109);
 
       const tempScrollObj = { value: scrollProgress };
       gsap.killTweensOf(tempScrollObj);
@@ -1587,7 +1613,7 @@
 
       const targetCamPos = new THREE.Vector3(
         worldPos.x + camXOffset,
-        worldPos.y + 0.1,
+        worldPos.y + 0.10,
         worldPos.z + 3.8
       );
 
@@ -1756,16 +1782,13 @@
       closeDrawerBtn.addEventListener('click', closeProjectDrawer);
     }
 
-    /* =========================================================================
-       CONCEPT 1: INDEX OVERLAY CATALOG LOGIC & INTERACTION
-       ========================================================================= */
     let isIndexOpen = false;
 
     function renderIndexTable() {
       if (!indexTableBody) return;
       indexTableBody.innerHTML = '';
 
-      // Slice and reverse projects array so catalog lists from 08 down to 01
+      // Slice and reverse projects array so catalog lists from 09 down to 01
       const reversedProjects = projects.slice().reverse();
 
       reversedProjects.forEach((proj) => {
@@ -1789,7 +1812,6 @@
           </td>
         `;
 
-        // Row Hover Preview Handling
         tr.addEventListener('mouseenter', () => {
           if (indexPreviewImg && proj.images && proj.images[0]) {
             indexPreviewImg.src = proj.images[0];
@@ -1809,7 +1831,6 @@
           }
         });
 
-        // Click Handler: Fly camera to project and open drawer!
         tr.addEventListener('click', () => {
           closeIndexOverlay();
           setTimeout(() => {
@@ -1820,7 +1841,6 @@
         indexTableBody.appendChild(tr);
       });
 
-      // Re-initialize dynamic Lucide icons inside catalog sheet table
       lucide.createIcons();
       registerHoverEvents();
     }
@@ -1848,7 +1868,6 @@
       }
     }
 
-    // Floating Cursor Box Track on Index Sheet
     window.addEventListener('mousemove', (e) => {
       if (isIndexOpen && indexHoverPreview) {
         indexHoverPreview.style.left = `${e.clientX + 140}px`;
@@ -1927,7 +1946,10 @@
       if (el('drawer-tagline'))     el('drawer-tagline').innerText = p.tagline;
       if (el('drawer-client'))      el('drawer-client').innerText = p.client;
       if (el('drawer-services'))    el('drawer-services').innerText = p.services;
-      if (el('drawer-description')) el('drawer-description').innerText = p.desc;
+      if (el('drawer-description')) {
+        const formattedDesc = p.desc.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-orange-500 underline hover:text-orange-400 transition-colors">$1</a>');
+        el('drawer-description').innerHTML = formattedDesc;
+      }
 
       activeSlides = [];
       
@@ -2038,7 +2060,7 @@
               <p class="text-[10px] text-orange-500 font-mono-space uppercase tracking-widest">Digital & Product Designer</p>
             </div>
           </div>
-          <p class="text-zinc-300 leading-relaxed">I'm a Digital & Product Designer based in the Gatineau–Ottawa region, with 12 years of experience designing products, brands, and digital experiences. From SaaS platforms and eCommerce to branding and marketing websites, I create thoughtful, user-centered solutions that balance business goals with exceptional design.</p>
+          <p class="text-zinc-300 leading-relaxed">I'm a Digital & Product Designer based in the Gatineau–Ottawa region, with 12 years of experience designing products, brands, and digital experiences. From SaaS platforms and eCommerce to branding and marketing websites, I create thoughtful, user-centered solutions that balance business goals with exceptional design. I'm also actively experimenting with AI, 3D, and WebGL to push the boundaries of digital craft.</p>
         `;
       } else if (type === 'contact' && infoModalTitle && infoModalContent) {
         infoModalTitle.innerText = "GET IN TOUCH";
