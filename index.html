@@ -208,7 +208,7 @@
   </div>
 
   <!-- Bottom Right: Interactive ABOUT Link -->
-  <div class="absolute right-6 md:right-8 bottom-8 z-30 flex items-center gap-6">
+  <div class="absolute right-6 md:right-8 bottom-8 z-30 hidden md:flex items-center gap-6">
     <div class="flex items-center gap-4">
       <button id="nav-about" class="flex items-center gap-3 group px-5 py-2.5 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
         <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">ABOUT</span>
@@ -231,7 +231,7 @@
     <div class="flex-1 overflow-y-auto custom-scroll">
 
       <!-- Header: close + tag -->
-      <div class="px-8 pt-7 pb-0 flex justify-between items-start">
+      <div class="px-5 md:px-8 pt-7 pb-0 flex justify-between items-start">
         <div class="flex items-center gap-2">
           <span class="text-[10px] font-mono-space px-2 py-1 bg-orange-500 rounded-none text-black font-bold" id="drawer-tag">TAG</span>
           <span class="text-[10px] font-mono-space text-zinc-500" id="drawer-date">2026</span>
@@ -242,13 +242,13 @@
       </div>
 
       <!-- Title + tagline -->
-      <div class="px-8 pt-5 pb-6">
-        <h2 class="text-4xl font-syne font-extrabold tracking-widest leading-tight mb-1.5 text-zinc-100" id="drawer-title">Project Title</h2>
-        <p class="text-base text-zinc-500 font-mono-space" id="drawer-tagline">Tagline</p>
+      <div class="px-5 md:px-8 pt-5 pb-6">
+        <h2 class="text-2xl md:text-4xl font-syne font-extrabold tracking-widest leading-tight mb-1.5 text-zinc-100" id="drawer-title">Project Title</h2>
+        <p class="text-sm md:text-base text-zinc-500 font-mono-space" id="drawer-tagline">Tagline</p>
       </div>
 
       <!-- Cover image -->
-      <div class="relative group mx-8 rounded-none overflow-hidden bg-zinc-900 flex justify-center items-center border border-zinc-800 cursor-pointer" id="drawer-cover">
+      <div class="relative group mx-5 md:mx-8 rounded-none overflow-hidden bg-zinc-900 flex justify-center items-center border border-zinc-800 cursor-pointer" id="drawer-cover">
         <div id="drawer-cover-media" class="w-full flex justify-center items-center">
         </div>
 
@@ -261,14 +261,14 @@
       </div>
 
       <!-- Gallery row -->
-      <div class="px-8 pt-6" id="drawer-images-section" style="display:none;">
+      <div class="px-5 md:px-8 pt-6" id="drawer-images-section" style="display:none;">
         <p class="text-[10px] font-mono-space text-zinc-500 block uppercase tracking-widest mb-3">Project Gallery</p>
-        <div class="grid grid-cols-7 gap-2.5 w-full" id="drawer-images-grid">
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2.5 w-full" id="drawer-images-grid">
         </div>
       </div>
 
       <!-- Meta: client + services + summary -->
-      <div class="px-8 pt-7 pb-4 space-y-6">
+      <div class="px-5 md:px-8 pt-7 pb-4 space-y-6">
         <div class="grid grid-cols-2 gap-6">
           <div>
             <span class="text-[10px] font-mono-space text-zinc-500 block uppercase tracking-widest mb-1">Client</span>
@@ -288,7 +288,7 @@
 
     </div>
 
-    <div class="px-8 py-5 border-t border-zinc-800 bg-[#0f1114] flex items-center justify-between shrink-0 select-none">
+    <div class="px-5 md:px-8 py-5 border-t border-zinc-800 bg-[#0f1114] flex items-center justify-between shrink-0 select-none">
       <button id="drawer-prev-project" class="inline-flex items-center gap-2 px-4 py-2.5 border border-zinc-700 text-zinc-300 hover:border-orange-500 hover:text-orange-500 hover:bg-orange-500/5 rounded-none font-mono-space text-xs font-bold tracking-wider transition-all duration-300 disabled:opacity-30 disabled:border-zinc-800 disabled:text-zinc-600 disabled:hover:text-zinc-600 disabled:hover:bg-transparent disabled:pointer-events-none">
         ← PREVIOUS
       </button>
@@ -373,22 +373,22 @@
 
   <!-- Fullscreen Lightbox Modal -->
   <div id="lightbox-modal" class="fixed inset-0 backdrop-blur-md z-[100] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" style="background-color: rgba(5, 6, 8, 0.98);">
-    <button id="close-lightbox" class="absolute top-6 right-8 flex items-center gap-1.5 px-4 py-2 bg-zinc-900 text-zinc-100 border border-zinc-700 hover:bg-orange-500 hover:text-black hover:border-orange-500 rounded-none transition-all duration-200 text-xs font-mono-space z-[110] shadow-2xl">
+    <button id="close-lightbox" class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 bg-zinc-900 text-zinc-100 border border-zinc-700 hover:bg-orange-500 hover:text-black hover:border-orange-500 rounded-none transition-all duration-200 text-xs font-mono-space z-[110] shadow-2xl">
       CLOSE <i data-lucide="x" class="w-3.5 h-3.5 inline-block"></i>
     </button>
-    <div id="lightbox-indicator" class="absolute top-7 left-8 text-[10px] font-mono-space tracking-widest text-zinc-500 uppercase pointer-events-none select-none">
+    <div id="lightbox-indicator" class="absolute top-4 left-4 md:top-7 md:left-8 text-[9px] md:text-[10px] font-mono-space tracking-widest text-zinc-500 uppercase pointer-events-none select-none max-w-[60%] md:max-w-none truncate">
       IMAGE 1 OF 8 // Click Image to Zoom / Drag to Pan
     </div>
-    <button id="lightbox-prev" class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-black hover:border-orange-500 hover:bg-orange-500 transition-all duration-200 z-[110] rounded-none shadow-2xl">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+    <button id="lightbox-prev" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-black hover:border-orange-500 hover:bg-orange-500 transition-all duration-200 z-[110] rounded-none shadow-2xl">
+      <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
     </button>
-    <button id="lightbox-next" class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-black hover:border-orange-500 hover:bg-orange-500 transition-all duration-200 z-[110] rounded-none shadow-2xl">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+    <button id="lightbox-next" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-black hover:border-orange-500 hover:bg-orange-500 transition-all duration-200 z-[110] rounded-none shadow-2xl">
+      <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
     </button>
-    <div id="lightbox-wrapper" class="w-full h-full flex items-center justify-center overflow-hidden px-20 py-24">
+    <div id="lightbox-wrapper" class="w-full h-full flex items-center justify-center overflow-hidden px-14 py-20 md:px-20 md:py-24">
       <img id="lightbox-img" src="" alt="Portfolio high-resolution viewport specification sheet" class="max-w-full max-h-full object-contain cursor-zoom-in transition-transform duration-300 ease-out select-none" draggable="false">
     </div>
-    <div id="lightbox-thumbnails" class="absolute bottom-6 flex gap-3 z-[110] px-4 py-2 bg-zinc-900/90 border border-zinc-800 rounded-none backdrop-blur-sm max-w-[90vw] overflow-x-auto custom-scroll">
+    <div id="lightbox-thumbnails" class="absolute bottom-3 md:bottom-6 flex gap-2 md:gap-3 z-[110] px-3 py-1.5 md:px-4 md:py-2 bg-zinc-900/90 border border-zinc-800 rounded-none backdrop-blur-sm max-w-[92vw] overflow-x-auto custom-scroll">
     </div>
   </div>
 
@@ -510,111 +510,21 @@
     }
 
     /* Updated Project Sequence:
-       01 CargoSprint
-       02 Oatfi
-       03 BadCarbon
-       04 CaRMS
-       05 @Geostories
-       06 TrailerTrader
-       07 RocketAir
+       01 @GeoStories
+       02 CARMS
+       03 TrailerTrader
+       04 CargoSprint
+       05 Oatfi
+       06 BadCarbon
+       07 Larus
+       08 RocketAir
+       09 MCIM
     /* =========================================================================
        PROJECT DATA CONFIGURATION (9 Projects Total)
        ========================================================================= */
     const projects = [
       {
         num: "01",
-        title: "CargoSprint",
-        tagline: "Supply Chain Orchestration Platform",
-        client: "CargoSprint",
-        services: "UX, Art Direction, Design",
-        desc: "Challenge:\nCargoSprint had outgrown its brand. We repositioned the company to reflect its broader logistics platform and reinforce its leadership in the industry.\n\nSolution:\nWe clarified CargoSprint's positioning, evolved its brand, and redesigned its website to better reflect its industry leadership and support its next stage of growth.",
-        colors: ["#1c1c1a", "#292116", "#dfb76c", "#ffd700", "#fffdf9"],
-        tag: "SUPPLY CHAIN SAAS",
-        tech: ["Solid.js", "WebGL Shaders", "TailwindCSS", "Node.js Platform"],
-        date: "2025",
-        images: [
-          "https://x02.me/i/9U3J.webp",
-          "https://x02.me/i/VXUX.webp",
-          "https://x02.me/i/GZD84.webp",
-          "https://x02.me/i/T7U5.webp",
-          "https://x02.me/i/86YA.webp",
-          "https://x02.me/i/3QZUMR.webp",
-          "https://mbrissette.x02.me/i/8PR5XQ.webp",
-          "https://mbrissette.x02.me/i/HYH8.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "02",
-        title: "Oatfi",
-        tagline: "B2B payment & embedded capital infrastructure",
-        client: "Oatfi",
-        services: "Strategy, UX, Design, Illustration",
-        desc: "Challenge:\nOatFi is redefining B2B payments with embedded financing that helps businesses solve cash flow challenges. As they emerged from stealth, we partnered with them to create a bold new brand and website that highlights their innovative API platform and attracts new payment partners.\n\nSolution:\nWe transformed OatFi's complex fintech offering into a clear, compelling digital experience that builds credibility, communicates value in seconds, and drives conversations with new platform partners.\n\nWe equipped OatFi with a scalable marketing toolkit, making it easy to create consistent branded materials.",
-        colors: ["#0c0d0e", "#292014", "#dfb76c", "#ffd700", "#1c1d1e"],
-        tag: "FINTECH",
-        tech: ["Next.js", "Financial Ledger Architecture", "Tailwind CSS", "REST APIs"],
-        date: "2022",
-        images: [
-          "https://x02.me/i/93PPJ3.webp",
-          "https://mbrissette.x02.me/i/49N6.webp",
-          "https://x02.me/i/46QN4.webp",
-          "https://x02.me/i/TNH3XQ.webp",
-          "https://x02.me/i/VVC6BY.webp",
-          "https://x02.me/i/3239.webp",
-          "https://x02.me/i/BD2A.webp",
-          "https://mbrissette.x02.me/i/5Y5U5U.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "03",
-        title: "CaRMS",
-        tagline: "National residency match algorithm & platform interface",
-        client: "CaRMS",
-        services: "UX, Product Design, Design System",
-        desc: "Challenge:\nCaRMS' platform had grown increasingly complex, making it difficult to maintain, scale, and communicate across multiple stakeholders. The residency matching process relied on sophisticated algorithms and workflows, but the user experience and internal systems struggled to keep pace, creating friction for applicants, medical schools, and administrators.\n\nSolution:\nWe simplified the login and registration experience, reducing friction for new and returning users, while redesigning the program management workflow to make updating residency program information faster, more intuitive, and easier to maintain. The result was a more efficient platform for both applicants and administrators, built to support future growth and ongoing content management.",
-        colors: ["#02343f", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "HEALTHCARE",
-        tech: ["React Platform", "Algorithmic Sorting", "Tailwind CSS", "High-Contrast UI"],
-        date: "2023",
-        images: [
-          "https://x02.me/i/QPWBG.webp",
-          "https://x02.me/i/VVVG2.webp",
-          "https://x02.me/i/4P2Z.webp",
-          "https://x02.me/i/FWMGY.webp",
-          "https://x02.me/i/2GFVJ.webp",
-          "https://x02.me/i/UAF9R.webp",
-          "https://mbrissette.x02.me/i/RPMT.webp",
-          "https://mbrissette.x02.me/i/P9UDCZ.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "04",
-        title: "BadCarbon",
-        tagline: "B2B carbon management & sustainability interface",
-        client: "BadCarbon",
-        services: "UX, Art Direction, Design",
-        desc: "Challenge:\nBadCarbon had an innovative platform for measuring and reducing digital carbon emissions, but its brand lacked the clarity and credibility needed to resonate with enterprise customers and sustainability-conscious organizations.\n\nSolution:\nWe evolved the visual identity with a modern, technology-forward brand system and designed a new website that simplified the product story, communicated its value with confidence, and positioned BadCarbon as a trusted leader in sustainable digital infrastructure.",
-        colors: ["#0a0a09", "#1c241e", "#2e5a44", "#3e8e60", "#ffffff"],
-        tag: "B2B",
-        tech: ["Product Design", "B2B SaaS", "Design Systems", "Analytics"],
-        date: "2024",
-        images: [
-          "https://mbrissette.x02.me/i/GCC5HW.webp",
-          "https://mbrissette.x02.me/i/AS67.webp",
-          "https://mbrissette.x02.me/i/P85SK.webp",
-          "https://mbrissette.x02.me/i/R8QD.webp",
-          "https://mbrissette.x02.me/i/C6NJ.webp",
-          "https://mbrissette.x02.me/i/SCV98.webp",
-          "https://mbrissette.x02.me/i/XWS9.webp",
-          "https://mbrissette.x02.me/i/7ZCWT.gif"
-        ],
-        link: ""
-      },
-      {
-        num: "05",
         title: "@Geostories",
         tagline: "A location-aware social media campaign that rewarded exploration with contextual stories.",
         client: "@Geostories",
@@ -637,7 +547,7 @@
         link: ""
       },
       {
-        num: "06",
+        num: "02",
         title: "TrailerTrader",
         tagline: "The largest dedicated online marketplaces for commercial and utility trailers in the USA.",
         client: "TrailerTrader",
@@ -660,31 +570,100 @@
         link: ""
       },
       {
-        num: "07",
-        title: "RocketAir",
-        tagline: "Design & motion studio digital experience",
-        client: "RocketAir",
+        num: "03",
+        title: "YAT",
+        tagline: "A seamless sign-in experience for connecting wallets and managing NFTs",
+        client: "YAT",
         services: "UX, Art Direction, Design",
-        desc: "A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.\n\nhttps://www.rocketair.com/",
-        colors: ["#0a0f1d", "#1e1a12", "#dfb76c", "#ffd700", "#0e1834"],
-        tag: "DESIGN STUDIO",
-        tech: ["Design Systems", "Product Strategy", "Motion Graphics", "3D & WebGL"],
+        desc: "Challenge:\nDesign a seamless Web3 onboarding experience that simplifies wallet connection and NFT management while building trust with a crypto-native audience that expects transparency, security, and usability.\n\nSolution:\nCreated an intuitive onboarding flow with clear guidance, transparent permission states, and real-time system feedback. Combined with a refined visual language, the experience makes wallet and NFT interactions feel simple, secure, and trustworthy.",
+        colors: ["#0c0d0e", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
+        tag: "WEB3",
+        tech: ["Next.js", "Web3 Integration", "Tailwind CSS"],
         date: "2022",
         images: [
-          "https://mbrissette.x02.me/i/YQKSH.webp",
-          "https://mbrissette.x02.me/i/EUDDG.gif",
-          "https://mbrissette.x02.me/i/T4G7YG.webp",
-          "https://mbrissette.x02.me/i/J476CC.webp",
-          "https://mbrissette.x02.me/i/48KMST.webp",
-          "https://mbrissette.x02.me/i/EY6GR.webp",
-          "https://mbrissette.x02.me/i/R9ENXQ.webp",
-          "https://mbrissette.x02.me/i/XT3A.webp"
+          "https://mbrissette.x02.me/i/XD7U.webp",
+          "https://mbrissette.x02.me/i/TNPE.webp",
+          "https://mbrissette.x02.me/i/7S7X3.webp",
+          "https://mbrissette.x02.me/i/JYV543.webp",
+          "https://mbrissette.x02.me/i/AEXNYN.webp",
+          "https://mbrissette.x02.me/i/3XQFXR.webp",
+          "https://mbrissette.x02.me/i/ERN67R.webp",
+          "https://mbrissette.x02.me/i/SVNF.webp"
         ],
-        link: "https://www.rocketair.com/"
+        link: ""
       },
       {
-        num: "08",
-        title: "3D Cinematic Experience",
+        num: "04",
+        title: "CargoSprint",
+        tagline: "Supply Chain Orchestration Platform",
+        client: "CargoSprint",
+        services: "UX, Art Direction, Design",
+        desc: "Challenge:\nCargoSprint had outgrown its brand. We repositioned the company to reflect its broader logistics platform and reinforce its leadership in the industry.\n\nSolution:\nWe clarified CargoSprint's positioning, evolved its brand, and redesigned its website to better reflect its industry leadership and support its next stage of growth.\n\nIn less than a year since launch: nearly 3x headcount growth, another major acquisition, and a platform primed to keep expanding.",
+        colors: ["#1c1c1a", "#292116", "#dfb76c", "#ffd700", "#fffdf9"],
+        tag: "SUPPLY CHAIN SAAS",
+        tech: ["Solid.js", "WebGL Shaders", "TailwindCSS", "Node.js Platform"],
+        date: "2025",
+        images: [
+          "https://x02.me/i/9U3J.webp",
+          "https://mbrissette.x02.me/i/Q4E6P.webp",
+          "https://mbrissette.x02.me/i/W74R.webp",
+          "https://mbrissette.x02.me/i/5Q9J8.webp",
+          "https://mbrissette.x02.me/i/RFD76.webp",
+          "https://mbrissette.x02.me/i/2KXDZA.webp",
+          "https://mbrissette.x02.me/i/29ZAF.webp",
+          "https://mbrissette.x02.me/i/YHYS.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "05",
+        title: "BadCarbon",
+        tagline: "B2B carbon management & sustainability interface",
+        client: "BadCarbon",
+        services: "UX, Art Direction, Design",
+        desc: "Challenge:\nBadCarbon had an innovative platform for measuring and reducing digital carbon emissions, but its brand lacked the clarity and credibility needed to resonate with enterprise customers and sustainability-conscious organizations.\n\nSolution:\nWe evolved the visual identity with a modern, technology-forward brand system and designed a new website that simplified the product story, communicated its value with confidence, and positioned BadCarbon as a trusted leader in sustainable digital infrastructure.",
+        colors: ["#0a0a09", "#1c241e", "#2e5a44", "#3e8e60", "#ffffff"],
+        tag: "B2B",
+        tech: ["Product Design", "B2B SaaS", "Design Systems", "Analytics"],
+        date: "2024",
+        images: [
+          "https://mbrissette.x02.me/i/GCC5HW.webp",
+          "https://mbrissette.x02.me/i/AS67.webp",
+          "https://mbrissette.x02.me/i/P85SK.webp",
+          "https://mbrissette.x02.me/i/R8QD.webp",
+          "https://mbrissette.x02.me/i/C6NJ.webp",
+          "https://mbrissette.x02.me/i/SCV98.webp",
+          "https://mbrissette.x02.me/i/XWS9.webp",
+          "https://mbrissette.x02.me/i/VZAX.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "06",
+        title: "Oatfi",
+        tagline: "B2B payment & embedded capital infrastructure",
+        client: "Oatfi",
+        services: "Strategy, UX, Design, Illustration",
+        desc: "Challenge:\nOatFi is redefining B2B payments with embedded financing that helps businesses solve cash flow challenges. As they emerged from stealth, we partnered with them to create a bold new brand and website that highlights their innovative API platform and attracts new payment partners.\n\nSolution:\nWe transformed OatFi's complex fintech offering into a clear, compelling digital experience that builds credibility, communicates value in seconds, and drives conversations with new platform partners.\n\nWe equipped OatFi with a scalable marketing toolkit, making it easy to create consistent branded materials.",
+        colors: ["#0c0d0e", "#292014", "#dfb76c", "#ffd700", "#1c1d1e"],
+        tag: "FINTECH",
+        tech: ["Next.js", "Financial Ledger Architecture", "Tailwind CSS", "REST APIs"],
+        date: "2022",
+        images: [
+          "https://mbrissette.x02.me/i/RUS6B.webp",
+          "https://mbrissette.x02.me/i/WE4K5N.webp",
+          "https://mbrissette.x02.me/i/VFT5FD.webp",
+          "https://mbrissette.x02.me/i/JHFUQ.gif",
+          "https://x02.me/i/VVC6BY.webp",
+          "https://x02.me/i/3239.webp",
+          "https://x02.me/i/BD2A.webp",
+          "https://mbrissette.x02.me/i/5Y5U5U.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "07",
+        title: "Larus",
         tagline: "Designed to help visitors explore Larus' products through intuitive navigation, interactive storytelling, and real-time 3D graphics.",
         client: "Larus",
         services: "UX, Art Direction, Design, 3d",
@@ -706,12 +685,35 @@
         link: ""
       },
       {
+        num: "08",
+        title: "RocketAir",
+        tagline: "Design & motion studio digital experience",
+        client: "RocketAir",
+        services: "UX, Art Direction, Design",
+        desc: "A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.\n\nhttps://www.rocketair.com/\n\nAwwwards: Awarded Site of the Day and the Developer Award for balancing innovative design with quality code.\n\nCSS Design Awards: Selected as Website of the Day alongside public-voted category sweeps for Best UI Design, Best UX Design, and Best Innovation.",
+        colors: ["#0a0f1d", "#1e1a12", "#dfb76c", "#ffd700", "#0e1834"],
+        tag: "DESIGN STUDIO",
+        tech: ["Design Systems", "Product Strategy", "Motion Graphics", "3D & WebGL"],
+        date: "2022",
+        images: [
+          "https://mbrissette.x02.me/i/YQKSH.webp",
+          "https://mbrissette.x02.me/i/EUDDG.gif",
+          "https://mbrissette.x02.me/i/T4G7YG.webp",
+          "https://mbrissette.x02.me/i/J476CC.webp",
+          "https://mbrissette.x02.me/i/48KMST.webp",
+          "https://mbrissette.x02.me/i/BE9BD.webp",
+          "https://mbrissette.x02.me/i/R9ENXQ.webp",
+          "https://mbrissette.x02.me/i/XT3A.webp"
+        ],
+        link: "https://www.rocketair.com/"
+      },
+      {
         num: "09",
         title: "MCIM",
         tagline: "Modernizing a Mission-Critical Brand",
         client: "MCIM",
         services: "UX, Art Direction, Design",
-        desc: "Challenge:\nPE-backed tech company Fulcrum Collaborations was growing fast. As awareness expanded for both the corporate brand and its flagship SaaS product, MCIM (Mission Critical Information Management), it became clear that future growth would be amplified by the power of one cohesive brand. Fulcrum sought a unified, scalable brand – and a bold new website to define it.\n\nSolution:\nWe evolved MCIM’s existing brand to create a more modern, confident, and technology-focused identity while keeping the recognition they had already built. We also redesigned the website to clearly communicate what they do, who they serve, and why they’re a trusted leader in their industry.",
+        desc: "Challenge:\nPE-backed tech company Fulcrum Collaborations was growing fast. As awareness expanded for both the corporate brand and its flagship SaaS product, MCIM (Mission Critical Information Management), it became clear that future growth would be amplified by the power of one cohesive brand. Fulcrum sought a unified, scalable brand – and a bold new website to define it.\n\nSolution:\nWe evolved MCIM’s existing brand to create a more modern, confident, and technology-focused identity while keeping the recognition they had already built. We also redesigned the website to clearly communicate what they do, who they serve, and why they’re a trusted leader in their industry.\n\nThe result was a single global identity supporting expansion across 90+ countries – and, in the CMO’s words, “immediate improvement in leads and market reaction.”",
         colors: ["#120124", "#241910", "#dfb76c", "#ffd700", "#ffffff"],
         tag: "SAAS",
         tech: ["Web Audio API", "Svelte", "GLSL Shaders", "Tailwind UI"],
@@ -719,7 +721,7 @@
         images: [
           "https://x02.me/i/RGCKZW.webp",
           "https://mbrissette.x02.me/i/7RVN.webp",
-          "https://mbrissette.x02.me/i/BCE5.webp",
+          "https://mbrissette.x02.me/i/YJGQ.webp",
           "https://mbrissette.x02.me/i/X43YV6.webp",
           "https://mbrissette.x02.me/i/HHDQZ.webp",
           "https://mbrissette.x02.me/i/ZDVPY.webp",
@@ -728,6 +730,7 @@
         ],
         link: ""
       }
+    
     ];
 
     let mouseX = 0, mouseY = 0;
@@ -1410,6 +1413,15 @@
     groundBounce.position.set(0, -10, 4);
     scene.add(groundBounce);
 
+    // Faint orange bounce light — a soft, localized glow (same hue as the
+    // UI's orange accent) catching the concrete near the column. Kept low
+    // intensity and tightly decayed so it reads as ambient bounce rather
+    // than a visible light source, just enough to tie the UI accent color
+    // into the 3D environment.
+    const orangeBounceLight = new THREE.PointLight(0xf97316, 0.3, 12, 2.4);
+    orangeBounceLight.position.set(2.4, -4.5, 2.0);
+    scene.add(orangeBounceLight);
+
     let isFocused = false;
     let focusedIndex = null;
     let isTransitioning = false; 
@@ -1500,7 +1512,9 @@
     });
 
     webglContainer.addEventListener('click', (e) => {
-      if (isFocused || isIndexOpen) return;
+      if (isIndexOpen) return;
+      if (suppressNextCanvasClick) { suppressNextCanvasClick = false; return; }
+      if (isFocused) return;
       const dx = e.clientX - clickStartX;
       const dy = e.clientY - clickStartY;
       if (Math.sqrt(dx*dx + dy*dy) > 10) return;
@@ -1782,6 +1796,18 @@
       closeDrawerBtn.addEventListener('click', closeProjectDrawer);
     }
 
+    // Global safety net: close the drawer if the user clicks anywhere outside
+    // it (e.g. header/logo areas, or the 3D scene) that isn't otherwise handled.
+    let suppressNextCanvasClick = false;
+    document.addEventListener('pointerdown', (e) => {
+      if (!isFocused) return;
+      if (projectDrawer && projectDrawer.contains(e.target)) return;
+      if (lightboxModal && lightboxModal.contains(e.target)) return;
+      if (infoModal && infoModal.contains(e.target)) return;
+      closeProjectDrawer();
+      suppressNextCanvasClick = true;
+    }, true);
+
     let isIndexOpen = false;
 
     function renderIndexTable() {
@@ -1870,8 +1896,8 @@
 
     window.addEventListener('mousemove', (e) => {
       if (isIndexOpen && indexHoverPreview) {
-        indexHoverPreview.style.left = `${e.clientX + 140}px`;
-        indexHoverPreview.style.top = `${e.clientY}px`;
+        indexHoverPreview.style.left = `${e.clientX + 220}px`;
+        indexHoverPreview.style.top = `${e.clientY - 40}px`;
       }
     });
 
@@ -1982,6 +2008,8 @@
           if (extras[i]) {
             const img = document.createElement('img');
             img.src = extras[i];
+            img.loading = 'lazy';
+            img.decoding = 'async';
             img.className = 'w-full aspect-[16/11] rounded-lg object-cover bg-stone-100 cursor-pointer ring-2 ring-transparent hover:ring-black transition-all duration-200';
             img.addEventListener('click', () => {
               swapCover(img.src, p);
@@ -2060,7 +2088,7 @@
               <p class="text-[10px] text-orange-500 font-mono-space uppercase tracking-widest">Digital & Product Designer</p>
             </div>
           </div>
-          <p class="text-zinc-300 leading-relaxed">I'm a Digital & Product Designer based in the Gatineau–Ottawa region, with 12 years of experience designing products, brands, and digital experiences. From SaaS platforms and eCommerce to branding and marketing websites, I create thoughtful, user-centered solutions that balance business goals with exceptional design. I'm also actively experimenting with AI, 3D, and WebGL to push the boundaries of digital craft.</p>
+          <p class="text-zinc-300 leading-relaxed">I'm a Digital & Product Designer based in the Gatineau–Ottawa region, with 12 years of experience creating products, brands, and digital experiences across SaaS, eCommerce, and marketing. I integrate GenAI into my design workflow to accelerate research, content exploration, prototyping, and iteration while keeping user needs and business goals at the center of every decision. I'm also exploring 3D, WebGL, and creative technologies to craft more immersive digital experiences.</p>
         `;
       } else if (type === 'contact' && infoModalTitle && infoModalContent) {
         infoModalTitle.innerText = "GET IN TOUCH";
@@ -2509,25 +2537,16 @@
 
     function preloadPrimaryImages() {
       const preloadTask = () => {
+        // Only preload each project's cover image — it's used as the texture
+        // on the 3D carousel screens, so it should be ready before interaction.
+        // The rest of each project's gallery is lazy-loaded on demand when
+        // that project's drawer is actually opened (see populateProjectDrawer).
         projects.forEach((proj) => {
           if (proj.images && proj.images[0]) {
             const img = new Image();
             img.src = proj.images[0];
           }
         });
-
-        setTimeout(() => {
-          projects.forEach((proj) => {
-            if (proj.images && proj.images.length > 1) {
-              proj.images.slice(1).forEach((imgUrl) => {
-                if (imgUrl) {
-                  const img = new Image();
-                  img.src = imgUrl;
-                }
-              });
-            }
-          });
-        }, 2000);
       };
 
       if ('requestIdleCallback' in window) {
