@@ -160,10 +160,6 @@
         <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">ABOUT</span>
       </button>
 
-      <button id="nav-lab" class="flex items-center gap-2 md:gap-3 group px-4 md:px-5 py-2 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
-        <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">LAB</span>
-      </button>
-
       <button id="nav-contact" class="flex items-center gap-3 group px-5 py-2 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
         <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">CONTACT</span>
       </button>
@@ -190,14 +186,6 @@
       <div class="flex items-center gap-3">
         <i data-lucide="info" class="w-4 h-4 text-orange-500"></i>
         <span>ABOUT</span>
-      </div>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
-    </button>
-
-    <button id="mobile-nav-lab" class="w-full flex items-center justify-between p-3.5 border border-zinc-800 bg-zinc-900/60 hover:border-orange-500 text-zinc-100 font-mono-space text-xs tracking-widest uppercase transition-colors">
-      <div class="flex items-center gap-3">
-        <i data-lucide="flask-conical" class="w-4 h-4 text-orange-500"></i>
-        <span>LAB</span>
       </div>
       <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
     </button>
@@ -367,59 +355,6 @@
     </div>
   </div>
 
-  <!-- LAB Experimental Gallery Overlay -->
-  <div id="lab-overlay" class="fixed inset-0 z-[80] bg-[#0b0c0e]/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col p-6 md:p-12 text-zinc-100 overflow-hidden">
-    <!-- Overlay Top Bar -->
-    <div class="flex justify-between items-center border-b border-zinc-800/80 pb-6 shrink-0">
-      <div class="flex items-center gap-3">
-        <span class="inline-block w-2.5 h-2.5 bg-orange-500"></span>
-        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">LAB // EXPERIMENTS</span>
-      </div>
-      <button id="close-lab" class="flex items-center gap-2 px-4 py-2 border border-zinc-700 hover:border-orange-500 rounded-none text-zinc-300 hover:text-orange-500 font-mono-space text-xs transition-colors">
-        <span>CLOSE</span> <i data-lucide="x" class="w-4 h-4"></i>
-      </button>
-    </div>
-
-    <!-- Overlay Body: Sparse Gallery Grid -->
-    <div class="flex-1 overflow-y-auto custom-scroll pt-8 md:pt-10 pr-1">
-      <p class="text-xs md:text-sm font-mono-space text-zinc-500 max-w-xl mb-10 md:mb-14 leading-relaxed">
-        A running sandbox of personal WebGL, Three.js, and interaction experiments — built outside client work to test ideas, techniques, and visual styles.
-      </p>
-      <div id="lab-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-14 md:gap-y-20 max-w-6xl pb-10">
-      </div>
-    </div>
-
-    <!-- Overlay Bottom Footer Bar -->
-    <div class="border-t border-zinc-800/80 pt-4 flex flex-col md:flex-row justify-between text-[10px] font-mono-space text-zinc-500 shrink-0 gap-2">
-      <span class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></span>
-        SELECT ANY EXPERIMENT TO VIEW DETAILS
-      </span>
-      <span>PRESS [ESC] TO CLOSE</span>
-    </div>
-  </div>
-
-  <!-- LAB Item Fullscreen Detail View -->
-  <div id="lab-detail" class="fixed inset-0 z-[110] bg-[#050608] opacity-0 pointer-events-none transition-all duration-300 flex flex-col md:flex-row">
-    <button id="close-lab-detail" class="absolute top-4 right-4 md:top-6 md:right-8 flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 bg-zinc-900 text-zinc-100 border border-zinc-700 hover:bg-orange-500 hover:text-black hover:border-orange-500 rounded-none transition-all duration-200 text-xs font-mono-space z-[130] shadow-2xl">
-      CLOSE <i data-lucide="x" class="w-3.5 h-3.5 inline-block"></i>
-    </button>
-    <button id="lab-detail-prev" class="absolute left-2 md:left-6 top-[38%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-black hover:border-orange-500 hover:bg-orange-500 transition-all duration-200 z-[130] rounded-none shadow-2xl">
-      <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-    </button>
-    <button id="lab-detail-next" class="absolute right-2 md:right-6 top-[38%] md:top-1/2 -translate-y-1/2 w-9 h-9 md:w-12 md:h-12 flex items-center justify-center bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-black hover:border-orange-500 hover:bg-orange-500 transition-all duration-200 z-[130] rounded-none shadow-2xl">
-      <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-    </button>
-
-    <div class="flex-1 md:w-[64%] h-[45%] md:h-full flex items-center justify-center bg-black p-4 md:p-12 overflow-hidden">
-      <img id="lab-detail-img" src="" alt="" class="max-w-full max-h-full object-contain select-none" draggable="false">
-    </div>
-    <div class="md:w-[36%] h-[55%] md:h-full overflow-y-auto custom-scroll border-t md:border-t-0 md:border-l border-zinc-800 bg-[#0f1114] p-6 md:p-10 flex flex-col justify-center">
-      <span class="text-[10px] font-mono-space text-orange-500 tracking-widest uppercase mb-3" id="lab-detail-num">01 / 08</span>
-      <h3 class="text-2xl md:text-3xl font-syne font-bold text-zinc-100 tracking-wide mb-4 leading-tight" id="lab-detail-title">Title</h3>
-      <p class="text-sm text-zinc-400 font-mono-space leading-relaxed" id="lab-detail-desc">Description</p>
-    </div>
-  </div>
 
   <!-- Interactive HUD Element projecting above 3D space screens -->
   <div id="hud-prompt" class="absolute pointer-events-none z-30 opacity-0 transition-opacity duration-500 flex flex-col items-center">
@@ -486,54 +421,6 @@
     const closeDrawerBtn = document.getElementById('close-drawer');
     const hudPrompt = document.getElementById('hud-prompt');
     const lightboxModal = document.getElementById('lightbox-modal');
-    const labOverlay = document.getElementById('lab-overlay');
-    const labGrid = document.getElementById('lab-grid');
-    const closeLabBtn = document.getElementById('close-lab');
-    const labDetail = document.getElementById('lab-detail');
-    const labDetailImg = document.getElementById('lab-detail-img');
-    const labDetailTitle = document.getElementById('lab-detail-title');
-    const labDetailDesc = document.getElementById('lab-detail-desc');
-    const labDetailNum = document.getElementById('lab-detail-num');
-    const closeLabDetailBtn = document.getElementById('close-lab-detail');
-    const labDetailPrevBtn = document.getElementById('lab-detail-prev');
-    const labDetailNextBtn = document.getElementById('lab-detail-next');
-
-    const labItems = [
-      {
-        title: "Ruelle des Lumières",
-        image: "https://placehold.co/1200x800/14141a/f97316?text=Ruelle+des+Lumi%C3%A8res",
-        desc: "A cel-shaded Three.js scene set in a Plateau Mont-Royal back alley — row houses, spiral staircases, and a corner dépanneur rendered with ink outlines and lantern-lit ambience."
-      },
-      {
-        title: "Kyoto Neon Café",
-        image: "https://placehold.co/1200x800/14141a/f97316?text=Kyoto+Neon+Caf%C3%A9",
-        desc: "A moody late-night café interior with bloom post-processing, bokeh depth-of-field, and smooth scroll-driven camera movement through the space."
-      },
-      {
-        title: "Forest Pulse",
-        image: "https://placehold.co/1200x800/14141a/f97316?text=Forest+Pulse",
-        desc: "A scroll-driven editorial piece visualizing Canadian forest conditions, combining a live data layer, toggleable overlays, and drifting fire particle effects."
-      },
-      {
-        title: "Manga Highway",
-        image: "https://placehold.co/1200x800/14141a/f97316?text=Manga+Highway",
-        desc: "A toon-shaded driving simulator with ink-outline rendering, a photography core loop, cassette-deck audio, dynamic rain, and hand-built roadside world detail."
-      },
-      {
-        title: "Larus Systems Booth",
-        image: "https://placehold.co/1200x800/14141a/f97316?text=Larus+Systems",
-        desc: "An interactive 3D B2B exhibition booth with a glass-dome jet specimen easter egg, chromatic aberration, bloom, and a config-driven layer for client re-skinning."
-      },
-      {
-        title: "Dreamy Pastel Portal",
-        image: "https://placehold.co/1200x800/14141a/f97316?text=Pastel+Portal",
-        desc: "A cinematic Three.js portal scene with theme-switching ripple transitions, soft pastel lighting, and a slow-building intro sequence."
-      }
-    ];
-
-    let isLabOpen = false;
-    let isLabDetailOpen = false;
-    let currentLabIndex = 0;
     const lightboxImg = document.getElementById('lightbox-img');
     const closeLightboxBtn = document.getElementById('close-lightbox');
     const lightboxIndicator = document.getElementById('lightbox-indicator');
@@ -557,7 +444,6 @@
     const hamburgerCloseIcon = document.getElementById('hamburger-close-icon');
     const mobileNavIndex = document.getElementById('mobile-nav-index');
     const mobileNavAbout = document.getElementById('mobile-nav-about');
-    const mobileNavLab = document.getElementById('mobile-nav-lab');
     const mobileNavContact = document.getElementById('mobile-nav-contact');
 
     let isMobileTrayOpen = false;
@@ -606,14 +492,6 @@
         e.preventDefault();
         toggleMobileMenu(false);
         openInfoModal('about');
-      });
-    }
-
-    if (mobileNavLab) {
-      mobileNavLab.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleMobileMenu(false);
-        openLabOverlay();
       });
     }
 
@@ -1560,7 +1438,7 @@
     }
 
     window.addEventListener('wheel', (e) => {
-      if (isFocused || isIndexOpen || isLabOpen || isLabDetailOpen) return;
+      if (isFocused || isIndexOpen) return;
       e.preventDefault();
       resetIdleTimer();
       const clamped = Math.max(-40, Math.min(40, e.deltaY));
@@ -1574,7 +1452,7 @@
       scrollVelocity = 0;
     });
     window.addEventListener('touchmove', (e) => {
-      if (isFocused || isIndexOpen || isLabOpen || isLabDetailOpen) return;
+      if (isFocused || isIndexOpen) return;
       resetIdleTimer();
       const delta = touchStart - e.touches[0].clientY;
       scrollVelocity += delta * TOUCH_SENSITIVITY;
@@ -1582,7 +1460,7 @@
     }, { passive: true });
 
     window.addEventListener('keydown', (e) => {
-      if (isFocused || isIndexOpen || isLabOpen || isLabDetailOpen) return;
+      if (isFocused || isIndexOpen) return;
       const down = e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown';
       const up   = e.key === 'ArrowUp'   || e.key === 'ArrowLeft'  || e.key === 'PageUp';
       if (!down && !up) return;
@@ -1628,7 +1506,7 @@
     });
 
     webglContainer.addEventListener('click', (e) => {
-      if (isIndexOpen || isLabOpen || isLabDetailOpen) return;
+      if (isIndexOpen) return;
       if (suppressNextCanvasClick) { suppressNextCanvasClick = false; return; }
       if (isFocused) return;
       const dx = e.clientX - clickStartX;
@@ -1920,8 +1798,6 @@
       if (projectDrawer && projectDrawer.contains(e.target)) return;
       if (lightboxModal && lightboxModal.contains(e.target)) return;
       if (infoModal && infoModal.contains(e.target)) return;
-      if (labOverlay && labOverlay.contains(e.target)) return;
-      if (labDetail && labDetail.contains(e.target)) return;
       closeProjectDrawer();
       suppressNextCanvasClick = true;
     }, true);
@@ -2021,77 +1897,6 @@
 
     if (navIndexBtn) navIndexBtn.addEventListener('click', (e) => { e.preventDefault(); openIndexOverlay(); });
     if (closeIndexBtn) closeIndexBtn.addEventListener('click', (e) => { e.preventDefault(); closeIndexOverlay(); });
-
-    /* LAB — sparse gallery of personal experiments */
-    function renderLabGrid() {
-      if (!labGrid) return;
-      labGrid.innerHTML = '';
-      const offsets = ['', 'md:translate-y-10', 'md:-translate-y-6'];
-      labItems.forEach((item, i) => {
-        const div = document.createElement('div');
-        div.className = `lab-item cursor-pointer group ${offsets[i % offsets.length]} transition-transform duration-300`;
-        div.innerHTML = `
-          <div class="relative aspect-video overflow-hidden border border-zinc-800 bg-zinc-900 group-hover:border-orange-500 transition-colors duration-300">
-            <img src="${item.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="${item.title}" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-        `;
-        div.addEventListener('click', () => openLabDetail(i));
-        labGrid.appendChild(div);
-      });
-    }
-
-    function openLabOverlay() {
-      if (isLabOpen) return;
-      isLabOpen = true;
-      if (labOverlay) {
-        labOverlay.classList.remove('pointer-events-none', 'opacity-0');
-        labOverlay.classList.add('opacity-100');
-      }
-      renderLabGrid();
-      lucide.createIcons();
-    }
-
-    function closeLabOverlay() {
-      if (!isLabOpen) return;
-      isLabOpen = false;
-      if (labOverlay) {
-        labOverlay.classList.add('pointer-events-none', 'opacity-0');
-        labOverlay.classList.remove('opacity-100');
-      }
-    }
-
-    function openLabDetail(index) {
-      if (!labDetail || !labItems[index]) return;
-      currentLabIndex = index;
-      const item = labItems[index];
-      if (labDetailImg) labDetailImg.src = item.image;
-      if (labDetailTitle) labDetailTitle.innerText = item.title;
-      if (labDetailDesc) labDetailDesc.innerText = item.desc;
-      if (labDetailNum) labDetailNum.innerText = `${String(index + 1).padStart(2, '0')} / ${String(labItems.length).padStart(2, '0')}`;
-      isLabDetailOpen = true;
-      labDetail.classList.remove('pointer-events-none', 'opacity-0');
-      labDetail.classList.add('opacity-100');
-    }
-
-    function closeLabDetail() {
-      if (!labDetail) return;
-      isLabDetailOpen = false;
-      labDetail.classList.add('pointer-events-none', 'opacity-0');
-      labDetail.classList.remove('opacity-100');
-    }
-
-    function navigateLabDetail(delta) {
-      let next = (currentLabIndex + delta + labItems.length) % labItems.length;
-      openLabDetail(next);
-    }
-
-    const navLabBtn = document.getElementById('nav-lab');
-    if (navLabBtn) navLabBtn.addEventListener('click', (e) => { e.preventDefault(); openLabOverlay(); });
-    if (closeLabBtn) closeLabBtn.addEventListener('click', (e) => { e.preventDefault(); closeLabOverlay(); });
-    if (closeLabDetailBtn) closeLabDetailBtn.addEventListener('click', (e) => { e.stopPropagation(); closeLabDetail(); });
-    if (labDetailPrevBtn) labDetailPrevBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateLabDetail(-1); });
-    if (labDetailNextBtn) labDetailNextBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateLabDetail(1); });
 
     let activeSlides = [];
     let currentSlideIndex = 0;
@@ -2426,18 +2231,6 @@
         } else if (e.key === 'Escape') {
           closeLightbox();
         }
-      } else if (isLabDetailOpen) {
-        if (e.key === 'ArrowLeft') {
-          navigateLabDetail(-1);
-        } else if (e.key === 'ArrowRight') {
-          navigateLabDetail(1);
-        } else if (e.key === 'Escape') {
-          closeLabDetail();
-        }
-      } else if (isLabOpen) {
-        if (e.key === 'Escape') {
-          closeLabOverlay();
-        }
       } else if (isIndexOpen) {
         if (e.key === 'Escape' || e.key === 'i' || e.key === 'I') {
           closeIndexOverlay();
@@ -2576,7 +2369,7 @@
         const isLightboxOpen = lightboxModal && !lightboxModal.classList.contains('pointer-events-none');
         const isDrawerFullyOpen = isFocused && !isTransitioning;
 
-        if (!isLightboxOpen && !isDrawerFullyOpen && isTabVisible && !isIndexOpen && !isLabOpen && !isLabDetailOpen) {
+        if (!isLightboxOpen && !isDrawerFullyOpen && isTabVisible && !isIndexOpen) {
           if (currentFps < 45) {
             if (!lowFpsStartTime) {
               lowFpsStartTime = now;
@@ -2604,7 +2397,7 @@
       const isLightboxOpen = lightboxModal && !lightboxModal.classList.contains('pointer-events-none');
       const isDrawerFullyOpen = isFocused && !isTransitioning;
 
-      if ((isLightboxOpen || isDrawerFullyOpen || isIndexOpen || isLabOpen || isLabDetailOpen) && (renderFrameCount % 6 !== 0)) {
+      if ((isLightboxOpen || isDrawerFullyOpen || isIndexOpen) && (renderFrameCount % 6 !== 0)) {
         return;
       }
 
@@ -2622,7 +2415,7 @@
         ballProgress = 1.0; 
       }
 
-      if (!isFocused && !isIndexOpen && !isLabOpen && !isLabDetailOpen) {
+      if (!isFocused && !isIndexOpen) {
         tickScroll();
 
         const maxRotation = Math.PI * 2 * (revolutions - 0.5); 
