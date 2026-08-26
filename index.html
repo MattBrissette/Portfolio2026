@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MATT BRISSETTE // Product & Digital Designer Portfolio</title>
+  <title>MATT BRISSETTE // Visual Design · Art Direction · Digital Product</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,8 +19,9 @@
   <!-- GSAP for Smooth Camera Interpolations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-  <!-- Three.js (r128) -->
+  <!-- Three.js (r128) & BufferGeometryUtils -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/utils/BufferGeometryUtils.js"></script>
 
   <style>
     body {
@@ -98,7 +99,6 @@
       background-size: 128px 128px;
     }
 
-    /* Simple UI Tuning Slider Styling override */
     input[type="range"]::-webkit-slider-thumb {
       background-color: #f97316;
       border-radius: 0;
@@ -145,7 +145,7 @@
            alt="Matt Brissette Profile">
       <div class="flex flex-col justify-center leading-none min-w-0">
         <span class="font-syne font-extrabold text-lg sm:text-2xl md:text-3xl tracking-widest leading-none text-zinc-100 truncate">MATT BRISSETTE</span>
-        <span class="text-[7px] sm:text-[8px] md:text-[9px] font-mono-space tracking-widest text-zinc-500 uppercase leading-none mt-0.5 truncate">DIGITAL & PRODUCT DESIGNER</span>
+        <span class="text-[7px] sm:text-[8px] md:text-[9px] font-mono-space tracking-widest text-zinc-500 uppercase leading-none mt-0.5 truncate">Visual Design · Art Direction · Digital Product</span>
       </div>
     </div>
     
@@ -153,7 +153,7 @@
     <div class="hidden md:flex items-center gap-3 md:gap-4 pointer-events-auto">
       <button id="nav-index" class="flex items-center gap-2 md:gap-3 group px-4 md:px-5 py-2 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
         <i data-lucide="grid" class="w-3.5 h-3.5 text-orange-500 group-hover:text-black transition-colors"></i>
-        <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">INDEX [09]</span>
+        <span class="text-xs font-mono-space tracking-widest text-zinc-300 group-hover:text-black">INDEX [08]</span>
       </button>
 
       <button id="nav-about" class="flex items-center gap-2 md:gap-3 group px-4 md:px-5 py-2 border border-zinc-700 hover:border-orange-500 rounded-none bg-transparent text-zinc-300 hover:bg-orange-500 hover:text-black transition-all duration-300">
@@ -177,7 +177,7 @@
     <button id="mobile-nav-index" class="w-full flex items-center justify-between p-3.5 border border-zinc-800 bg-zinc-900/60 hover:border-orange-500 text-zinc-100 font-mono-space text-xs tracking-widest uppercase transition-colors">
       <div class="flex items-center gap-3">
         <i data-lucide="grid" class="w-4 h-4 text-orange-500"></i>
-        <span>INDEX CATALOG [09]</span>
+        <span>INDEX CATALOG [08]</span>
       </div>
       <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
     </button>
@@ -202,7 +202,7 @@
   <!-- Left Sidebar / Scroll Progress Status -->
   <div class="absolute left-6 md:left-8 bottom-8 z-30 flex flex-col items-start gap-4 pointer-events-none">
     <div class="flex items-end gap-3 pointer-events-auto">
-      <span class="text-3xl md:text-5xl font-syne font-extrabold leading-none text-orange-500" id="active-num">09</span>
+      <span class="text-3xl md:text-5xl font-syne font-extrabold leading-none text-orange-500" id="active-num">08</span>
       <div class="flex flex-col pb-1">
         <span class="text-[9px] font-mono-space tracking-wider text-zinc-600 uppercase" id="active-category-label">SAAS</span>
         <span class="text-xs font-mono-space font-medium tracking-tight text-zinc-300" id="active-title-label">MCIM</span>
@@ -218,6 +218,7 @@
   <!-- Three.js Canvas Container -->
   <div id="webgl-container" class="w-full h-full absolute inset-0 z-10 cursor-default"></div>
 
+  <!-- Project Drawer Panel -->
   <div id="project-drawer" class="fixed top-0 right-0 h-full w-full lg:w-[58%] xl:w-[63%] 2xl:w-[65%] bg-[#0f1114] shadow-2xl border-l border-zinc-800 z-50 translate-x-full transition-transform duration-700 ease-out flex flex-col text-zinc-100">
 
     <!-- Scrollable body -->
@@ -291,13 +292,13 @@
     </div>
   </div>
 
-  <!-- INDEX [09] Minimalist Architectural Catalog Overlay -->
+  <!-- INDEX [08] Catalog Overlay -->
   <div id="index-overlay" class="fixed inset-0 z-[80] bg-[#0b0c0e]/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col justify-between p-6 md:p-12 text-zinc-100 overflow-hidden">
     <!-- Overlay Top Bar -->
     <div class="flex justify-between items-center border-b border-zinc-800/80 pb-6 shrink-0">
       <div class="flex items-center gap-3">
         <span class="inline-block w-2.5 h-2.5 bg-orange-500"></span>
-        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">PROJECTS INDEX // 09 — 01</span>
+        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">PROJECTS INDEX // 08 — 01</span>
       </div>
       <button id="close-index" class="flex items-center gap-2 px-4 py-2 border border-zinc-700 hover:border-orange-500 rounded-none text-zinc-300 hover:text-orange-500 font-mono-space text-xs transition-colors">
         <span>CLOSE</span> <i data-lucide="x" class="w-4 h-4"></i>
@@ -322,21 +323,20 @@
       </table>
     </div>
 
-    <!-- Subtle Floating Dynamic Cursor Thumbnail Preview -->
-    <div id="index-hover-preview" class="fixed pointer-events-none z-[100] hidden md:block opacity-0 w-64 h-40 bg-zinc-900 border border-orange-500/50 shadow-2xl overflow-hidden transition-opacity duration-200 -translate-x-1/2 -translate-y-1/2">
-      <img id="index-preview-img" src="" alt="Project Preview" class="w-full h-full object-cover">
-      <div class="absolute bottom-0 inset-x-0 p-2 bg-black/80 backdrop-blur text-[9px] font-mono-space text-orange-500 tracking-widest uppercase flex justify-between">
-        <span id="index-preview-title">PROJECT</span>
-        <span id="index-preview-num">01</span>
+    <!-- 3D Parallax Tilt Dynamic Preview Card with Native Aspect Ratio Cover Image -->
+    <div id="index-hover-preview" class="fixed pointer-events-none z-[100] hidden md:block opacity-0 w-72 sm:w-80 bg-zinc-900 border border-orange-500/60 shadow-[0_25px_50px_rgba(0,0,0,0.95),0_0_30px_rgba(249,115,22,0.2)] transition-opacity duration-300 -translate-x-1/2 -translate-y-1/2" style="perspective: 1000px;">
+      <div id="index-preview-card-inner" class="relative w-full h-full transition-transform duration-75 ease-out" style="transform-style: preserve-3d;">
+        <!-- Cover Image Container preserving exact image ratio -->
+        <div class="relative w-full bg-zinc-950 flex items-center justify-center overflow-hidden border border-zinc-700/50 shadow-2xl">
+          <img id="index-preview-img" src="" alt="Project Preview" class="w-full h-auto object-contain block select-none">
+          <!-- Glossy Glass Sheen Reflection Overlay -->
+          <div id="index-preview-glare" class="absolute inset-0 pointer-events-none opacity-50 transition-all duration-75" style="background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);"></div>
+        </div>
       </div>
     </div>
 
     <!-- Overlay Bottom Footer Bar -->
     <div class="border-t border-zinc-800/80 pt-4 flex flex-col md:flex-row justify-between text-[10px] font-mono-space text-zinc-500 shrink-0 gap-2">
-      <span class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></span>
-        SELECT ANY ROW TO INITIATE 3D VECTOR CAMERA FLY-IN & ACTIVATE SPECIFICATIONS
-      </span>
       <span>PRESS [I] OR [ESC] TO TOGGLE CATALOG</span>
     </div>
   </div>
@@ -354,7 +354,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- Interactive HUD Element projecting above 3D space screens -->
   <div id="hud-prompt" class="absolute pointer-events-none z-30 opacity-0 transition-opacity duration-500 flex flex-col items-center">
@@ -503,68 +502,32 @@
       });
     }
 
-    /* Updated Project Sequence:
-       01 CaRMS
-       02 CARMS
-       03 TrailerTrader
-       04 CargoSprint
-       05 Oatfi
-       06 BadCarbon
-       07 Larus
-       08 RocketAir
-       09 MCIM
-    /* =========================================================================
-       PROJECT DATA CONFIGURATION (9 Projects Total)
-       ========================================================================= */
     const projects = [
       {
         num: "01",
-        title: "CaRMS",
-        tagline: "National residency match algorithm & platform interface",
-        client: "CaRMS",
-        services: "UX, Product Design, Design System",
-        desc: "Challenge:\nCaRMS' platform had grown increasingly complex, making it difficult to maintain, scale, and communicate across multiple stakeholders. The residency matching process relied on sophisticated algorithms and workflows, but the user experience and internal systems struggled to keep pace, creating friction for applicants, medical schools, and administrators.\n\nSolution:\nWe simplified the login and registration experience, reducing friction for new and returning users, while redesigning the program management workflow to make updating residency program information faster, more intuitive, and easier to maintain. The result was a more efficient platform for both applicants and administrators, built to support future growth and ongoing content management.",
-        colors: ["#02343f", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "HEALTHCARE",
-        tech: ["React Platform", "Algorithmic Sorting", "Tailwind CSS", "High-Contrast UI"],
+        title: "Revenue Grid",
+        tagline: "AI-driven Revenue Intelligence & Sales Engagement Platform",
+        client: "Revenue Grid",
+        services: "UX, Art Direction, Design Lead",
+        desc: "Challenge:\nRevenue Grid needed an upgraded digital experience and product presentation to showcase its AI-driven revenue intelligence and sales engagement platform to enterprise clients.\n\nSolution:\nDesigned an enterprise-grade digital experience with refined UX, bold visual hierarchy, and intuitive interface design highlighting real-time sales insights, automated pipeline management, and seamless CRM integrations.",
+        colors: ["#020914", "#291a10", "#dfb76c", "#ffd700", "#ffffff"],
+        tag: "B2B",
+        tech: ["Product Design", "Design Systems", "Analytics", "Tailwind CSS"],
         date: "2023",
         images: [
-          "https://mbrissette.x02.me/i/GB8STR.webp",
-          "https://mbrissette.x02.me/i/TWRN.webp",
-          "https://mbrissette.x02.me/i/XYRWXU.webp",
-          "https://mbrissette.x02.me/i/AR269T.webp",
-          "https://mbrissette.x02.me/i/RNAU9.webp",
-          "https://mbrissette.x02.me/i/VY9HHP.webp",
-          "https://mbrissette.x02.me/i/Z7SE7.webp",
-          "https://mbrissette.x02.me/i/WJ7W.webp"
+          "https://mbrissette.x02.me/i/7NKK.webp",
+          "https://mbrissette.x02.me/i/S73V.webp",
+          "https://mbrissette.x02.me/i/JDVG.webp",
+          "https://mbrissette.x02.me/i/YPP6.webp",
+          "https://mbrissette.x02.me/i/CUFFZ8.webp",
+          "https://mbrissette.x02.me/i/8K8TF.webp",
+          "https://mbrissette.x02.me/i/PXNQT.webp",
+          "https://mbrissette.x02.me/i/MTQSRG.webp"
         ],
         link: ""
       },
       {
         num: "02",
-        title: "Oatfi",
-        tagline: "B2B payment & embedded capital infrastructure",
-        client: "Oatfi",
-        services: "Strategy, UX, Design, Illustration",
-        desc: "Challenge:\nOatFi is redefining B2B payments with embedded financing that helps businesses solve cash flow challenges. As they emerged from stealth, we partnered with them to create a bold new brand and website that highlights their innovative API platform and attracts new payment partners.\n\nSolution:\nWe transformed OatFi's complex fintech offering into a clear, compelling digital experience that builds credibility, communicates value in seconds, and drives conversations with new platform partners.\n\nWe equipped OatFi with a scalable marketing toolkit, making it easy to create consistent branded materials.",
-        colors: ["#0c0d0e", "#292014", "#dfb76c", "#ffd700", "#1c1d1e"],
-        tag: "FINTECH",
-        tech: ["Next.js", "Financial Ledger Architecture", "Tailwind CSS", "REST APIs"],
-        date: "2022",
-        images: [
-          "https://mbrissette.x02.me/i/RUS6B.webp",
-          "https://mbrissette.x02.me/i/WE4K5N.webp",
-          "https://mbrissette.x02.me/i/VFT5FD.webp",
-          "https://mbrissette.x02.me/i/JHFUQ.gif",
-          "https://x02.me/i/VVC6BY.webp",
-          "https://x02.me/i/3239.webp",
-          "https://x02.me/i/BD2A.webp",
-          "https://mbrissette.x02.me/i/5Y5U5U.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "03",
         title: "YAT",
         tagline: "A seamless sign-in experience for connecting wallets and managing NFTs",
         client: "YAT",
@@ -587,30 +550,7 @@
         link: ""
       },
       {
-        num: "04",
-        title: "CargoSprint",
-        tagline: "Supply Chain Orchestration Platform",
-        client: "CargoSprint",
-        services: "UX, Art Direction, Design",
-        desc: "Challenge:\nCargoSprint had outgrown its brand. We repositioned the company to reflect its broader logistics platform and reinforce its leadership in the industry.\n\nSolution:\nWe clarified CargoSprint's positioning, evolved its brand, and redesigned its website to better reflect its industry leadership and support its next stage of growth.\n\nIn less than a year since launch: nearly 3x headcount growth, another major acquisition, and a platform primed to keep expanding.",
-        colors: ["#1c1c1a", "#292116", "#dfb76c", "#ffd700", "#fffdf9"],
-        tag: "SUPPLY CHAIN SAAS",
-        tech: ["Solid.js", "WebGL Shaders", "TailwindCSS", "Node.js Platform"],
-        date: "2025",
-        images: [
-          "https://x02.me/i/9U3J.webp",
-          "https://mbrissette.x02.me/i/Q4E6P.webp",
-          "https://mbrissette.x02.me/i/W74R.webp",
-          "https://mbrissette.x02.me/i/5Q9J8.webp",
-          "https://mbrissette.x02.me/i/RFD76.webp",
-          "https://mbrissette.x02.me/i/2KXDZA.webp",
-          "https://mbrissette.x02.me/i/29ZAF.webp",
-          "https://mbrissette.x02.me/i/YHYS.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "05",
+        num: "03",
         title: "BadCarbon",
         tagline: "B2B carbon management & sustainability interface",
         client: "BadCarbon",
@@ -633,30 +573,7 @@
         link: ""
       },
       {
-        num: "06",
-        title: "TrailerTrader",
-        tagline: "The largest dedicated online marketplaces for commercial and utility trailers in the USA.",
-        client: "TrailerTrader",
-        services: "UX, Art Direction, Product Design",
-        desc: "Challenge:\nAs TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.\n\nSolutions:\nWe created a comprehensive design system, a new dashboard for dealers, and delivered a faster, mobile-first experience with simpler navigation and stronger lead generation for dealers. It created more direct connections between buyers and dealers while providing a scalable foundation for future feature releases.",
-        colors: ["#020914", "#291a10", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "MARKETPLACE",
-        tech: ["WebXR", "ThreeJS", "Rust WebAssembly", "Tailwind CSS"],
-        date: "2022",
-        images: [
-          "https://x02.me/i/D6BN2.webp",
-          "https://x02.me/i/7CZY.webp",
-          "https://x02.me/i/AZXWA.webp",
-          "https://x02.me/i/FY92.webp",
-          "https://x02.me/i/TN56VD.webp",
-          "https://x02.me/i/WWUV9J.webp",
-          "https://mbrissette.x02.me/i/UN463.webp",
-          "https://mbrissette.x02.me/i/T295H.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "07",
+        num: "04",
         title: "Larus",
         tagline: "Designed to help visitors explore Larus' products through intuitive navigation, interactive storytelling, and real-time 3D graphics.",
         client: "Larus",
@@ -679,12 +596,58 @@
         link: ""
       },
       {
-        num: "08",
+        num: "05",
+        title: "CargoSprint",
+        tagline: "Supply Chain Orchestration Platform",
+        client: "CargoSprint",
+        services: "UX, Art Direction, Design Lead",
+        desc: "Challenge:\nCargoSprint had outgrown its brand. As the company evolved from a specialized cargo payments provider into a broader logistics technology platform, its identity no longer reflected the scale of its offerings or its position within the industry.\n\nSolution:\nI led the UX, information architecture, and visual design for CargoSprint’s new website, creating a clearer experience centered around speed, visibility, and operational efficiency. I also contributed to the evolution of the brand, creating comprehensive brand guidelines, photography art direction, and a refreshed visual language and design system that better showcased CargoSprint’s payment, appointment, and cargo visibility solutions while strengthening its positioning with global supply chain leaders.\n\nRapid Growth:\nIn less than a year following launch, CargoSprint nearly tripled its headcount, completed another major acquisition, and established a digital platform built to support continued growth and expansion.",
+        colors: ["#1c1c1a", "#292116", "#dfb76c", "#ffd700", "#fffdf9"],
+        tag: "SUPPLY CHAIN SAAS",
+        tech: ["Solid.js", "WebGL Shaders", "TailwindCSS", "Node.js Platform"],
+        date: "2025",
+        images: [
+          "https://x02.me/i/9U3J.webp",
+          "https://mbrissette.x02.me/i/Q4E6P.webp",
+          "https://mbrissette.x02.me/i/W74R.webp",
+          "https://mbrissette.x02.me/i/5Q9J8.webp",
+          "https://mbrissette.x02.me/i/RFD76.webp",
+          "https://mbrissette.x02.me/i/2KXDZA.webp",
+          "https://mbrissette.x02.me/i/29ZAF.webp",
+          "https://mbrissette.x02.me/i/YHYS.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "06",
+        title: "Oatfi",
+        tagline: "B2B payment & embedded capital infrastructure",
+        client: "Oatfi",
+        services: "Strategy, UX, Design, Illustration",
+        desc: "OatFi is a fintech lender focused on B2B payments, offering API infrastructure that lets platforms embed working capital tools directly into payment flows.\n\nAs OatFi exited stealth mode, I helped shape its positioning as a modern alternative to traditional lenders, contributing to a bold, dynamic brand built around black, white, and neon accents. I worked on the visual identity and modular design system, creating an adaptable language that reflected how OatFi’s API integrates across different platforms and industries.\n\nFor the website, I led the UX strategy, information architecture, and design—creating custom icons, custom illustrations, and brand guidelines to deliver a simple and engaging experience that clearly communicates OatFi’s product, differentiation, and value through bold visuals, natural language, and purposeful microinteractions.",
+        colors: ["#0c0d0e", "#292014", "#dfb76c", "#ffd700", "#1c1d1e"],
+        tag: "FINTECH",
+        tech: ["Next.js", "Financial Ledger Architecture", "Tailwind CSS", "REST APIs"],
+        date: "2022",
+        images: [
+          "https://mbrissette.x02.me/i/RUS6B.webp",
+          "https://mbrissette.x02.me/i/WE4K5N.webp",
+          "https://mbrissette.x02.me/i/383CP.webp",
+          "https://mbrissette.x02.me/i/VFT5FD.webp",
+          "https://mbrissette.x02.me/i/V98Q4.webp",
+          "https://mbrissette.x02.me/i/7XQT8F.webp",
+          "https://mbrissette.x02.me/i/TU474.webp",
+          "https://mbrissette.x02.me/i/5Y5U5U.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "07",
         title: "RocketAir",
         tagline: "Design & motion studio digital experience",
         client: "RocketAir",
-        services: "UX, Art Direction, Design",
-        desc: "A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.\n\nhttps://www.rocketair.com/\n\nAwwwards: Awarded Site of the Day and the Developer Award for balancing innovative design with quality code.\n\nCSS Design Awards: Selected as Website of the Day alongside public-voted category sweeps for Best UI Design, Best UX Design, and Best Innovation.",
+        services: "UX, Art Direction, Design Lead",
+        desc: "A digital experience created in collaboration with RocketAir, blending creative strategy, thoughtful design, and high-impact visuals into a modern, engaging web experience.\n\nVisuals were inspired by Neobrutalism and Swiss design — featuring big, bold typography, a lo-fi space theme contrasted with bright neon yellow, and designed with motion in mind.\n\nWebsite built in Webflow.\nhttps://www.rocketair.com/\n\nAwwwards: Awarded Site of the Day and the Developer Award for balancing innovative design with quality code.\n\nCSS Design Awards: Selected as Website of the Day alongside public-voted category sweeps for Best UI Design, Best UX Design, and Best Innovation.",
         colors: ["#0a0f1d", "#1e1a12", "#dfb76c", "#ffd700", "#0e1834"],
         tag: "DESIGN STUDIO",
         tech: ["Design Systems", "Product Strategy", "Motion Graphics", "3D & WebGL"],
@@ -694,7 +657,7 @@
           "https://mbrissette.x02.me/i/EUDDG.gif",
           "https://mbrissette.x02.me/i/T4G7YG.webp",
           "https://mbrissette.x02.me/i/J476CC.webp",
-          "https://mbrissette.x02.me/i/48KMST.webp",
+          "https://mbrissette.x02.me/i/6Z3HY6.webp",
           "https://mbrissette.x02.me/i/BE9BD.webp",
           "https://mbrissette.x02.me/i/R9ENXQ.webp",
           "https://mbrissette.x02.me/i/XT3A.webp"
@@ -702,12 +665,12 @@
         link: "https://www.rocketair.com/"
       },
       {
-        num: "09",
+        num: "08",
         title: "MCIM",
         tagline: "Modernizing a Mission-Critical Brand",
         client: "MCIM",
-        services: "UX, Art Direction, Design",
-        desc: "Challenge:\nPE-backed tech company Fulcrum Collaborations was growing fast. As awareness expanded for both the corporate brand and its flagship SaaS product, MCIM (Mission Critical Information Management), it became clear that future growth would be amplified by the power of one cohesive brand. Fulcrum sought a unified, scalable brand – and a bold new website to define it.\n\nSolution:\nWe evolved MCIM’s existing brand to create a more modern, confident, and technology-focused identity while keeping the recognition they had already built. We also redesigned the website to clearly communicate what they do, who they serve, and why they’re a trusted leader in their industry.\n\nThe result was a single global identity supporting expansion across 90+ countries – and, in the CMO’s words, “immediate improvement in leads and market reaction.”",
+        services: "UX, Art Direction, Design Lead",
+        desc: "Challenge:\nPE-backed tech company Fulcrum Collaborations was growing fast. As awareness expanded for both the corporate brand and its flagship SaaS product, MCIM (Mission Critical Information Management), it became clear that future growth would be amplified by the power of one cohesive brand. Fulcrum sought a unified, scalable brand – and a bold new website to define it.\n\nSolution:\nI helped evolve MCIM’s existing brand into a more modern, confident, and technology-focused identity while preserving the recognition they had already built—creating the overall art direction, comprehensive brand guidelines, and custom iconography. For the website, I led the UX and wireframing process before designing the final experience, creating a clearer digital presence that communicates what MCIM does, who they serve, and why they’re a trusted leader in their industry.\n\nThe result was a single global identity supporting expansion across 90+ countries – and, in the CMO’s words, “immediate improvement in leads and market reaction.”",
         colors: ["#120124", "#241910", "#dfb76c", "#ffd700", "#ffffff"],
         tag: "SAAS",
         tech: ["Web Audio API", "Svelte", "GLSL Shaders", "Tailwind UI"],
@@ -716,15 +679,14 @@
           "https://x02.me/i/RGCKZW.webp",
           "https://mbrissette.x02.me/i/7RVN.webp",
           "https://mbrissette.x02.me/i/YJGQ.webp",
+          "https://mbrissette.x02.me/i/B8UQHT.webp",
           "https://mbrissette.x02.me/i/X43YV6.webp",
           "https://mbrissette.x02.me/i/HHDQZ.webp",
           "https://mbrissette.x02.me/i/ZDVPY.webp",
-          "https://mbrissette.x02.me/i/B8UQHT.webp",
           "https://mbrissette.x02.me/i/UTJQ.webp"
         ],
         link: ""
       }
-    
     ];
 
     let mouseX = 0, mouseY = 0;
@@ -766,16 +728,16 @@
 
     function generateConcreteCanvas(isBump = false) {
       const canvas = document.createElement('canvas');
-      canvas.width = 1024;
-      canvas.height = 1024;
+      canvas.width = 512;
+      canvas.height = 512;
       const ctx = canvas.getContext('2d');
 
       const numBoards = 8;
-      const boardHeight = 1024 / numBoards;
+      const boardHeight = 512 / numBoards;
 
       if (!isBump) {
         ctx.fillStyle = '#4a4a4a';
-        ctx.fillRect(0, 0, 1024, 1024);
+        ctx.fillRect(0, 0, 512, 512);
 
         for (let i = 0; i < numBoards; i++) {
           const yStart = i * boardHeight;
@@ -785,7 +747,7 @@
           const b = Math.floor(68 + toneOffset * 0.8);
           
           ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-          ctx.fillRect(0, yStart, 1024, boardHeight);
+          ctx.fillRect(0, yStart, 512, boardHeight);
 
           const grad = ctx.createLinearGradient(0, yStart, 0, yStart + boardHeight);
           grad.addColorStop(0, 'rgba(0,0,0,0.06)');
@@ -793,71 +755,69 @@
           grad.addColorStop(0.88, 'rgba(0,0,0,0.0)');
           grad.addColorStop(1, 'rgba(0,0,0,0.05)');
           ctx.fillStyle = grad;
-          ctx.fillRect(0, yStart, 1024, boardHeight);
+          ctx.fillRect(0, yStart, 512, boardHeight);
 
           const holeY = yStart + boardHeight / 2;
-          const holeXPositions = [256, 768];
+          const holeXPositions = [128, 384];
           
           holeXPositions.forEach(hx => {
             ctx.fillStyle = 'rgba(60, 58, 55, 0.45)';
-            ctx.beginPath(); ctx.arc(hx, holeY, 14, 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(hx, holeY, 7, 0, Math.PI * 2); ctx.fill();
 
             ctx.fillStyle = 'rgba(38, 36, 33, 0.72)';
-            ctx.beginPath(); ctx.arc(hx, holeY, 10, 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(hx, holeY, 5, 0, Math.PI * 2); ctx.fill();
 
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.28)';
-            ctx.lineWidth = 1.8;
-            ctx.beginPath(); ctx.arc(hx, holeY, 13, 0.1 * Math.PI, 0.9 * Math.PI); ctx.stroke();
+            ctx.lineWidth = 1.0;
+            ctx.beginPath(); ctx.arc(hx, holeY, 6.5, 0.1 * Math.PI, 0.9 * Math.PI); ctx.stroke();
           });
         }
 
         for (let i = 0; i < 8; i++) {
-          const x = Math.random() * 1024;
-          const y = Math.random() * 1024;
-          const r = 160 + Math.random() * 260;
+          const x = Math.random() * 512;
+          const y = Math.random() * 512;
+          const r = 80 + Math.random() * 130;
           const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
           const darkTone = Math.floor(115 + Math.random() * 45);
           grad.addColorStop(0, `rgba(${darkTone}, ${darkTone - 4}, ${darkTone - 12}, 0.14)`);
           grad.addColorStop(1, 'rgba(0,0,0,0)');
           ctx.fillStyle = grad;
-          ctx.fillRect(0, 0, 1024, 1024);
+          ctx.fillRect(0, 0, 512, 512);
         }
 
         for (let i = 0; i <= numBoards; i++) {
           const y = i * boardHeight;
           ctx.strokeStyle = 'rgba(50, 48, 45, 0.38)';
-          ctx.lineWidth = 3.0;
-          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1024, y); ctx.stroke();
+          ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(512, y); ctx.stroke();
 
           ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
-          ctx.lineWidth = 1.0;
-          ctx.beginPath(); ctx.moveTo(0, y + 2.0); ctx.lineTo(1024, y + 2.0); ctx.stroke();
+          ctx.lineWidth = 0.8;
+          ctx.beginPath(); ctx.moveTo(0, y + 1.0); ctx.lineTo(512, y + 1.0); ctx.stroke();
         }
 
-        const imgData = ctx.getImageData(0, 0, 1024, 1024);
-        const data = imgData.data;
-        for (let i = 0; i < data.length; i += 4) {
+        const imgData = ctx.getImageData(0, 0, 512, 512);
+        const buf32 = new Uint32Array(imgData.data.buffer);
+        const len = buf32.length;
+        for (let i = 0; i < len; i++) {
+          const pixel = buf32[i];
+          let r = pixel & 0xFF;
+          let g = (pixel >> 8) & 0xFF;
+          let b = (pixel >> 16) & 0xFF;
+          const a = (pixel >> 24) & 0xFF;
+
           const noise = (Math.random() - 0.5) * 11.5;
-          data[i] = Math.max(0, Math.min(255, data[i] + noise));
-          data[i+1] = Math.max(0, Math.min(255, data[i+1] + noise));
-          data[i+2] = Math.max(0, Math.min(255, data[i+2] + noise));
+          r = Math.max(0, Math.min(255, r + noise)) | 0;
+          g = Math.max(0, Math.min(255, g + noise)) | 0;
+          b = Math.max(0, Math.min(255, b + noise)) | 0;
+
+          buf32[i] = (a << 24) | (b << 16) | (g << 8) | r;
         }
         ctx.putImageData(imgData, 0, 0);
 
-        ctx.fillStyle = 'rgba(40, 38, 35, 0.32)';
-        for (let i = 0; i < 400; i++) {
-          const x = Math.random() * 1024;
-          const y = Math.random() * 1024;
-          const size = 0.8 + Math.random() * 2.4;
-          ctx.beginPath(); ctx.arc(x, y, size, 0, Math.PI * 2); ctx.fill();
-
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.16)';
-          ctx.beginPath(); ctx.arc(x, y + 0.5, size * 0.7, 0, Math.PI); ctx.fill();
-        }
-
       } else {
         ctx.fillStyle = '#808080';
-        ctx.fillRect(0, 0, 1024, 1024);
+        ctx.fillRect(0, 0, 512, 512);
 
         for (let i = 0; i < numBoards; i++) {
           const yStart = i * boardHeight;
@@ -865,55 +825,44 @@
           const grayVal = Math.floor(128 + stepOffset);
           
           ctx.fillStyle = `rgb(${grayVal}, ${grayVal}, ${grayVal})`;
-          ctx.fillRect(0, yStart, 1024, boardHeight);
-
-          const grad = ctx.createLinearGradient(0, yStart, 0, yStart + boardHeight);
-          grad.addColorStop(0, 'rgba(0,0,0,0.08)');
-          grad.addColorStop(0.1, 'rgba(0,0,0,0)');
-          grad.addColorStop(0.9, 'rgba(0,0,0,0)');
-          grad.addColorStop(1, 'rgba(255,255,255,0.06)');
-          ctx.fillStyle = grad;
-          ctx.fillRect(0, yStart, 1024, boardHeight);
+          ctx.fillRect(0, yStart, 512, boardHeight);
 
           const holeY = yStart + boardHeight / 2;
-          const holeXPositions = [256, 768];
+          const holeXPositions = [128, 384];
           holeXPositions.forEach(hx => {
             ctx.fillStyle = 'rgb(102, 102, 102)';
-            ctx.beginPath(); ctx.arc(hx, holeY, 14, 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(hx, holeY, 7, 0, Math.PI * 2); ctx.fill();
 
             ctx.fillStyle = 'rgb(28, 28, 28)';
-            ctx.beginPath(); ctx.arc(hx, holeY, 10, 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(hx, holeY, 5, 0, Math.PI * 2); ctx.fill();
           });
         }
 
         for (let i = 0; i <= numBoards; i++) {
           const y = i * boardHeight;
           ctx.strokeStyle = 'rgb(38, 38, 38)'; 
-          ctx.lineWidth = 4.0;
-          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1024, y); ctx.stroke();
-
-          ctx.strokeStyle = 'rgb(165, 165, 165)'; 
-          ctx.lineWidth = 1.5;
-          ctx.beginPath(); ctx.moveTo(0, y + 2.0); ctx.lineTo(1024, y + 2.0); ctx.stroke();
+          ctx.lineWidth = 2.0;
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(512, y); ctx.stroke();
         }
 
-        const imgData = ctx.getImageData(0, 0, 1024, 1024);
-        const data = imgData.data;
-        for (let i = 0; i < data.length; i += 4) {
+        const imgData = ctx.getImageData(0, 0, 512, 512);
+        const buf32 = new Uint32Array(imgData.data.buffer);
+        const len = buf32.length;
+        for (let i = 0; i < len; i++) {
+          const pixel = buf32[i];
+          let r = pixel & 0xFF;
+          let g = (pixel >> 8) & 0xFF;
+          let b = (pixel >> 16) & 0xFF;
+          const a = (pixel >> 24) & 0xFF;
+
           const noise = (Math.random() - 0.5) * 8.2;
-          data[i] = Math.max(0, Math.min(255, data[i] + noise));
-          data[i+1] = Math.max(0, Math.min(255, data[i+1] + noise));
-          data[i+2] = Math.max(0, Math.min(255, data[i+2] + noise));
+          r = Math.max(0, Math.min(255, r + noise)) | 0;
+          g = Math.max(0, Math.min(255, g + noise)) | 0;
+          b = Math.max(0, Math.min(255, b + noise)) | 0;
+
+          buf32[i] = (a << 24) | (b << 16) | (g << 8) | r;
         }
         ctx.putImageData(imgData, 0, 0);
-
-        ctx.fillStyle = 'rgb(42, 42, 42)';
-        for (let i = 0; i < 400; i++) {
-          const x = Math.random() * 1024;
-          const y = Math.random() * 1024;
-          const size = 0.8 + Math.random() * 2.4;
-          ctx.beginPath(); ctx.arc(x, y, size, 0, Math.PI * 2); ctx.fill();
-        }
       }
 
       return canvas;
@@ -1080,7 +1029,7 @@
     let cameraTarget = new THREE.Vector3(0, 0.2, 0);
     camera.lookAt(cameraTarget);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance" });
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.shadowMap.enabled = true;
@@ -1089,7 +1038,7 @@
     renderer.toneMappingExposure = 0.90; 
     container.appendChild(renderer.domElement);
 
-    const maxAnisotropy = renderer.capabilities.getMaxAnisotropy();
+    const maxAnisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 8);
 
     const spiralGroup = new THREE.Group();
     scene.add(spiralGroup);
@@ -1097,11 +1046,13 @@
     const concreteMapTex = new THREE.CanvasTexture(generateConcreteCanvas(false));
     concreteMapTex.wrapS = concreteMapTex.wrapT = THREE.RepeatWrapping;
     concreteMapTex.repeat.set(2, 4);
+    concreteMapTex.minFilter = THREE.LinearMipmapLinearFilter;
     concreteMapTex.anisotropy = maxAnisotropy;
 
     const concreteBumpTex = new THREE.CanvasTexture(generateConcreteCanvas(true));
     concreteBumpTex.wrapS = concreteBumpTex.wrapT = THREE.RepeatWrapping;
     concreteBumpTex.repeat.set(2, 4);
+    concreteBumpTex.minFilter = THREE.LinearMipmapLinearFilter;
     concreteBumpTex.anisotropy = maxAnisotropy;
 
     const concreteMaterial = new THREE.MeshStandardMaterial({
@@ -1119,6 +1070,8 @@
     const colMesh = new THREE.Mesh(colGeom, concreteMaterial);
     colMesh.castShadow = true;
     colMesh.receiveShadow = true;
+    colMesh.matrixAutoUpdate = false;
+    colMesh.updateMatrix();
     spiralGroup.add(colMesh);
 
     const numSteps = 160;
@@ -1185,6 +1138,8 @@
     const slideMesh = new THREE.Mesh(slideGeom, concreteMaterial);
     slideMesh.castShadow = true;
     slideMesh.receiveShadow = true;
+    slideMesh.matrixAutoUpdate = false;
+    slideMesh.updateMatrix();
     stepsGroup.add(slideMesh);
 
     const borderGeom = new THREE.BufferGeometry();
@@ -1241,6 +1196,8 @@
     const borderMesh = new THREE.Mesh(borderGeom, concreteMaterial);
     borderMesh.castShadow = true;
     borderMesh.receiveShadow = true;
+    borderMesh.matrixAutoUpdate = false;
+    borderMesh.updateMatrix();
     stepsGroup.add(borderMesh);
 
     // Obsidian sphere setup
@@ -1274,8 +1231,9 @@
       envMapIntensity: 1.6
     });
 
+    const totalProjects = projects.length; // 8 projects
     projects.forEach((proj, idx) => {
-      const stepIdx = Math.floor(22 + idx * 14.5);
+      const stepIdx = Math.floor(18 + idx * (120 / (totalProjects - 1)));
       const ratio = stepIdx / numSteps;
       const angle = ratio * Math.PI * 2 * revolutions;
       const yPos = (ratio * heightSpan) - (heightSpan / 2) + 0.68; 
@@ -1305,6 +1263,8 @@
       const bodyMesh = new THREE.Mesh(bodyGeom, concreteMaterial);
       bodyMesh.castShadow = true;
       bodyMesh.receiveShadow = true;
+      bodyMesh.matrixAutoUpdate = false;
+      bodyMesh.updateMatrix();
       itemGroup.add(bodyMesh);
 
       const faceGeom = new THREE.PlaneGeometry(frameWidth - (0.06 * scaleFactor), frameHeight - (0.06 * scaleFactor));
@@ -1328,43 +1288,48 @@
 
       const faceMesh = new THREE.Mesh(faceGeom, faceMat);
       faceMesh.position.z = frameDepth / 2 + 0.002; 
+      faceMesh.matrixAutoUpdate = false;
+      faceMesh.updateMatrix();
       itemGroup.add(faceMesh);
 
       const bracketGroup = new THREE.Group();
       itemGroup.add(bracketGroup);
 
-      const hingeGeom = new THREE.CylinderGeometry(0.06, 0.06, 0.50, 16);
-      const hingeMesh = new THREE.Mesh(hingeGeom, concreteMaterial);
-      hingeMesh.position.set(0, 0, -frameDepth/2 - 0.03);
-      hingeMesh.castShadow = true;
-      hingeMesh.receiveShadow = true;
-      bracketGroup.add(hingeMesh);
-
       const armLength = 0.32;
+
+      const hingeGeom = new THREE.CylinderGeometry(0.06, 0.06, 0.50, 16);
+      hingeGeom.translate(0, 0, -frameDepth / 2 - 0.03);
+
       const armGeom = new THREE.BoxGeometry(0.12, 0.12, armLength);
-      const armMesh = new THREE.Mesh(armGeom, concreteMaterial);
-      armMesh.position.set(0, -0.22, -0.03 - armLength / 2);
-      armMesh.rotation.x = 0.18; 
-      armMesh.castShadow = true;
-      armMesh.receiveShadow = true;
-      bracketGroup.add(armMesh);
+      armGeom.rotateX(0.18);
+      armGeom.translate(0, -0.22, -0.03 - armLength / 2);
 
       const clampPlateGeom = new THREE.BoxGeometry(0.25, 0.35, 0.02);
-      const clampPlate = new THREE.Mesh(clampPlateGeom, concreteMaterial);
-      clampPlate.position.set(0, -0.28, -0.03 - armLength);
-      clampPlate.castShadow = true;
-      clampPlate.receiveShadow = true;
-      bracketGroup.add(clampPlate);
+      clampPlateGeom.translate(0, -0.28, -0.03 - armLength);
 
-      const boltGeom = new THREE.CylinderGeometry(0.015, 0.015, 0.01, 8);
+      const mergedBracketGeom = THREE.BufferGeometryUtils.mergeBufferGeometries([hingeGeom, armGeom, clampPlateGeom]);
+      const mergedBracketMesh = new THREE.Mesh(mergedBracketGeom, concreteMaterial);
+      mergedBracketMesh.castShadow = true;
+      mergedBracketMesh.receiveShadow = true;
+      mergedBracketMesh.matrixAutoUpdate = false;
+      mergedBracketMesh.updateMatrix();
+      bracketGroup.add(mergedBracketMesh);
+
+      const boltBaseGeom = new THREE.CylinderGeometry(0.015, 0.015, 0.01, 8);
+      const boltGeoms = [];
       const boltsOffset = [[0.08, 0.12], [-0.08, 0.12], [0.08, -0.12], [-0.08, -0.12]];
       boltsOffset.forEach(b => {
-        const bMesh = new THREE.Mesh(boltGeom, goldBoltsMat);
-        bMesh.position.set(b[0], -0.28 + b[1], -0.03 - armLength + 0.012);
-        bMesh.rotation.x = Math.PI / 2; 
-        bMesh.castShadow = true;
-        bracketGroup.add(bMesh);
+        const bg = boltBaseGeom.clone();
+        bg.rotateX(Math.PI / 2);
+        bg.translate(b[0], -0.28 + b[1], -0.03 - armLength + 0.012);
+        boltGeoms.push(bg);
       });
+      const mergedBoltsGeom = THREE.BufferGeometryUtils.mergeBufferGeometries(boltGeoms);
+      const mergedBoltsMesh = new THREE.Mesh(mergedBoltsGeom, goldBoltsMat);
+      mergedBoltsMesh.castShadow = false;
+      mergedBoltsMesh.matrixAutoUpdate = false;
+      mergedBoltsMesh.updateMatrix();
+      bracketGroup.add(mergedBoltsMesh);
 
       itemGroup.userData = {
         projectIndex: idx,
@@ -1388,15 +1353,16 @@
     const mainLight = new THREE.DirectionalLight(0xc8d8ff, 3.20);
     mainLight.position.set(14.0, 22.0, 6.0);
     mainLight.castShadow = true;
-    mainLight.shadow.mapSize.width = 4096;
-    mainLight.shadow.mapSize.height = 4096;
+    mainLight.shadow.mapSize.width = 2048;
+    mainLight.shadow.mapSize.height = 2048;
     mainLight.shadow.bias = -0.00050;
     mainLight.shadow.camera.near = 0.5;
     mainLight.shadow.camera.far = 60;
-    mainLight.shadow.camera.left = -14;
-    mainLight.shadow.camera.right = 14;
-    mainLight.shadow.camera.top = 14;
-    mainLight.shadow.camera.bottom = -14;
+    mainLight.shadow.camera.left = -5;
+    mainLight.shadow.camera.right = 5;
+    mainLight.shadow.camera.top = 9;
+    mainLight.shadow.camera.bottom = -9;
+    mainLight.shadow.camera.updateProjectionMatrix();
     scene.add(mainLight);
 
     const skyFill = new THREE.DirectionalLight(0xf97316, 1.10);
@@ -1407,11 +1373,6 @@
     groundBounce.position.set(0, -10, 4);
     scene.add(groundBounce);
 
-    // Faint orange bounce light — a soft, localized glow (same hue as the
-    // UI's orange accent) catching the concrete near the column. Kept low
-    // intensity and tightly decayed so it reads as ambient bounce rather
-    // than a visible light source, just enough to tie the UI accent color
-    // into the 3D environment.
     const orangeBounceLight = new THREE.PointLight(0xf97316, 0.3, 12, 2.4);
     orangeBounceLight.position.set(2.4, -4.5, 2.0);
     scene.add(orangeBounceLight);
@@ -1421,7 +1382,7 @@
     let isTransitioning = false; 
     let scrollProgress = 0.07800; 
     let targetScrollProgress = 0.07800;
-    let activeProjectIndex = 8; // Starts centered on MCIM (09)
+    let activeProjectIndex = 7; // Starts centered on MCIM (08)
 
     let scrollVelocity = 0.0;
     const FRICTION = 0.82;
@@ -1588,7 +1549,7 @@
       localTargetRot.y -= 0.12; 
       localTargetRot.x += 0.04;
 
-      const targetScroll = 0.95 - (index * 0.109);
+      const targetScroll = 0.95 - (index * (0.87 / (totalProjects - 1)));
 
       const tempScrollObj = { value: scrollProgress };
       gsap.killTweensOf(tempScrollObj);
@@ -1790,8 +1751,6 @@
       closeDrawerBtn.addEventListener('click', closeProjectDrawer);
     }
 
-    // Global safety net: close the drawer if the user clicks anywhere outside
-    // it (e.g. header/logo areas, or the 3D scene) that isn't otherwise handled.
     let suppressNextCanvasClick = false;
     document.addEventListener('pointerdown', (e) => {
       if (!isFocused) return;
@@ -1803,12 +1762,12 @@
     }, true);
 
     let isIndexOpen = false;
+    let activeHoverRow = null;
 
     function renderIndexTable() {
       if (!indexTableBody) return;
       indexTableBody.innerHTML = '';
 
-      // Slice and reverse projects array so catalog lists from 09 down to 01
       const reversedProjects = projects.slice().reverse();
 
       reversedProjects.forEach((proj) => {
@@ -1833,10 +1792,9 @@
         `;
 
         tr.addEventListener('mouseenter', () => {
+          activeHoverRow = tr;
           if (indexPreviewImg && proj.images && proj.images[0]) {
             indexPreviewImg.src = proj.images[0];
-            if (indexPreviewTitle) indexPreviewTitle.innerText = proj.title;
-            if (indexPreviewNum) indexPreviewNum.innerText = proj.num;
             if (indexHoverPreview) {
               indexHoverPreview.classList.remove('opacity-0');
               indexHoverPreview.classList.add('opacity-100');
@@ -1845,9 +1803,14 @@
         });
 
         tr.addEventListener('mouseleave', () => {
+          activeHoverRow = null;
           if (indexHoverPreview) {
             indexHoverPreview.classList.remove('opacity-100');
             indexHoverPreview.classList.add('opacity-0');
+          }
+          const innerCard = document.getElementById('index-preview-card-inner');
+          if (innerCard) {
+            innerCard.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0px)';
           }
         });
 
@@ -1888,10 +1851,45 @@
       }
     }
 
+    /* 3D Parallax Tilt Mouse Move Handler */
     window.addEventListener('mousemove', (e) => {
-      if (isIndexOpen && indexHoverPreview) {
-        indexHoverPreview.style.left = `${e.clientX + 220}px`;
-        indexHoverPreview.style.top = `${e.clientY - 40}px`;
+      if (isIndexOpen && indexHoverPreview && indexHoverPreview.classList.contains('opacity-100')) {
+        const previewWidth = indexHoverPreview.offsetWidth || 320;
+        const previewHeight = indexHoverPreview.offsetHeight || 220;
+        
+        let leftPos = e.clientX + 200;
+        let topPos = e.clientY - (previewHeight / 2);
+
+        if (leftPos + (previewWidth / 2) > window.innerWidth - 20) {
+          leftPos = e.clientX - (previewWidth / 2) - 40;
+        }
+        if (topPos < 20) topPos = 20;
+        if (topPos + previewHeight > window.innerHeight - 20) {
+          topPos = window.innerHeight - previewHeight - 20;
+        }
+
+        indexHoverPreview.style.left = `${leftPos}px`;
+        indexHoverPreview.style.top = `${topPos}px`;
+
+        const innerCard = document.getElementById('index-preview-card-inner');
+        const glare = document.getElementById('index-preview-glare');
+
+        if (innerCard && activeHoverRow) {
+          const rect = activeHoverRow.getBoundingClientRect();
+          const normX = Math.max(-0.5, Math.min(0.5, (e.clientX - rect.left) / rect.width - 0.5));
+          const normY = Math.max(-0.5, Math.min(0.5, (e.clientY - rect.top) / rect.height - 0.5));
+
+          const tiltY = normX * 36;
+          const tiltX = -normY * 24;
+
+          innerCard.style.transform = `rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateZ(12px) scale(1.03)`;
+
+          if (glare) {
+            const angle = Math.atan2(normY, normX) * (180 / Math.PI) + 90;
+            const opacity = 0.25 + (Math.sqrt(normX * normX + normY * normY) * 0.6);
+            glare.style.background = `linear-gradient(${angle.toFixed(0)}deg, rgba(255,255,255,${opacity.toFixed(2)}) 0%, rgba(255,255,255,0) 65%)`;
+          }
+        }
       }
     });
 
@@ -2082,7 +2080,9 @@
               <p class="text-[10px] text-orange-500 font-mono-space uppercase tracking-widest">Digital & Product Designer</p>
             </div>
           </div>
-          <p class="text-zinc-300 leading-relaxed">I'm a Digital & Product Designer based in the Gatineau–Ottawa region, with 12 years of experience creating products, brands, and digital experiences across SaaS, eCommerce, and marketing. I integrate GenAI into my design workflow to accelerate research, content exploration, prototyping, and iteration while keeping user needs and business goals at the center of every decision. I'm also exploring 3D, WebGL, and creative technologies to craft more immersive digital experiences.</p>
+          <p class="text-zinc-300 leading-relaxed">I specialize in Visual Design, Art Direction, and Digital Product Design, with 10+ years of experience creating brands, digital products, and experiences for SaaS, technology, and consumer businesses.</p>
+          <p class="text-zinc-300 leading-relaxed">I integrate GenAI into my design workflow to accelerate research, content exploration, prototyping, and iteration while keeping user needs and business goals at the center of every decision.</p>
+          <p class="text-zinc-300 leading-relaxed">I'm also exploring 3D, WebGL, and creative technologies to craft more immersive digital experiences.</p>
         `;
       } else if (type === 'contact' && infoModalTitle && infoModalContent) {
         infoModalTitle.innerText = "GET IN TOUCH";
@@ -2531,10 +2531,6 @@
 
     function preloadPrimaryImages() {
       const preloadTask = () => {
-        // Only preload each project's cover image — it's used as the texture
-        // on the 3D carousel screens, so it should be ready before interaction.
-        // The rest of each project's gallery is lazy-loaded on demand when
-        // that project's drawer is actually opened (see populateProjectDrawer).
         projects.forEach((proj) => {
           if (proj.images && proj.images[0]) {
             const img = new Image();
