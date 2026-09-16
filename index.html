@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MATT BRISSETTE // Visual Design, Art Direction, and Digital Product</title>
   
-  <!-- Tailwind CSS -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Fonts -->
+  <!-- Google Fonts: IBM Plex Mono, Syne, Bebas Neue, Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Syne:wght@500;700;800&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- GSAP for Smooth Camera Interpolations -->
+  <!-- GSAP Animation Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <!-- Three.js (r128) & BufferGeometryUtils -->
@@ -46,7 +46,7 @@
     .font-mono-space {
       font-family: 'Space Grotesk', sans-serif;
     }
-    /* Custom Scrollbar for Drawer, Overlay & Panels */
+    /* Custom Scrollbars */
     .custom-scroll::-webkit-scrollbar {
       width: 4px;
     }
@@ -57,16 +57,7 @@
       background: #f97316;
       border-radius: 0px;
     }
-    /* Pulsating explore element */
-    @keyframes pulse-slow {
-      0%, 100% { opacity: 0.9; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.96); }
-    }
-    .pulse-element {
-      animation: pulse-slow 3s infinite ease-in-out;
-    }
-
-    /* Animated Tactile Film Noise Overlay */
+    /* Film Noise Texture Overlay */
     #noise-overlay {
       position: fixed;
       top: -50%;
@@ -98,33 +89,19 @@
       animation: noise-shift 0.15s steps(3) infinite;
       background-size: 128px 128px;
     }
-
-    input[type="range"]::-webkit-slider-thumb {
-      background-color: #f97316;
-      border-radius: 0;
-      height: 10px;
-      width: 10px;
-    }
-    input[type="range"]::-moz-range-thumb {
-      background-color: #f97316;
-      border-radius: 0;
-      height: 10px;
-      width: 10px;
-      border: none;
-    }
   </style>
 </head>
 <body class="relative w-screen h-screen text-zinc-100 overflow-hidden bg-[#0b0c0e]">
 
-  <!-- Hardware-Accelerated Animated Static Noise Overlay -->
+  <!-- Film Noise Layer -->
   <div id="noise-overlay" class="noise-active"></div>
 
-  <!-- Loading Screen -->
+  <!-- Initial Boot Loading Screen -->
   <div id="loading-screen" class="fixed inset-0 z-[9999] bg-[#0b0c0e] flex flex-col items-center justify-center pointer-events-none">
     <div id="loading-inner" style="opacity:0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease;">
       <div class="flex flex-col items-center gap-3">
         <span class="font-syne font-extrabold text-2xl tracking-widest leading-none text-zinc-100">MATT BRISSETTE</span>
-        <span class="text-[9px] font-mono-space tracking-widest text-zinc-500 uppercase">Senior Product Designer</span>
+        <span class="text-[9px] font-mono-space tracking-widest text-zinc-500 uppercase">Senior Digital Designer</span>
         <div class="mt-6 flex items-center gap-2">
           <span class="inline-block w-1.5 h-1.5 bg-orange-500 animate-pulse"></span>
           <span class="text-[10px] font-mono-space tracking-widest text-zinc-500 uppercase">Establishing Signal</span>
@@ -133,14 +110,12 @@
     </div>
   </div>
 
-  <!-- Custom Cinematic Ring Cursor -->
+  <!-- Custom Ring Cursor -->
   <div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 w-8 h-8 border rounded-none -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out z-[120] hidden md:block" style="border-color: #f97316; border-width: 1px;"></div>
   <div id="custom-cursor-dot" class="pointer-events-none fixed top-0 left-0 w-1.5 h-1.5 bg-orange-500 rounded-none -translate-x-1/2 -translate-y-1/2 z-[120] hidden md:block"></div>
 
-  <!-- Header -->
   <header class="absolute top-0 left-0 w-full p-4 md:p-8 flex justify-between items-center z-40 pointer-events-none">
     <div class="flex items-center gap-3 md:gap-5 pointer-events-auto max-w-[70%] sm:max-w-none">
-      <!-- Circular Profile Avatar -->
       <img src="https://x02.me/i/Q87H7A.webp" 
            onerror="this.src='https://placehold.co/120x120/111316/f97316?text=MB'" 
            class="w-9 h-9 md:w-12 md:h-12 rounded-full border border-zinc-800 object-cover shadow-lg shrink-0" 
@@ -155,7 +130,7 @@
     <div class="hidden md:flex items-center gap-6 lg:gap-8 pointer-events-auto">
       <button id="nav-index" class="flex items-center gap-2 group py-1 border-none bg-transparent text-[#D4D4D8] hover:text-white transition-colors duration-200">
         <i data-lucide="grid" class="w-3.5 h-3.5 text-orange-500 transition-transform group-hover:scale-110"></i>
-        <span class="font-mono-space text-[12px] leading-[16px] font-normal tracking-[1.2px]">INDEX [08]</span>
+        <span class="font-mono-space text-[12px] leading-[16px] font-normal tracking-[1.2px]">INDEX [07]</span>
       </button>
 
       <button id="nav-lab" class="flex items-center gap-2 group py-1 border-none bg-transparent text-[#D4D4D8] hover:text-white transition-colors duration-200">
@@ -171,19 +146,19 @@
       </button>
     </div>
 
-    <!-- Mobile Hamburger Toggle Button -->
+    <!-- Mobile Hamburger Toggle -->
     <button id="mobile-menu-toggle" aria-label="Toggle Menu" class="md:hidden flex items-center justify-center p-2.5 border border-zinc-700 bg-[#0b0c0e]/90 backdrop-blur text-zinc-100 hover:border-orange-500 hover:text-orange-500 transition-colors pointer-events-auto">
       <i data-lucide="menu" id="hamburger-open-icon" class="w-4 h-4"></i>
       <i data-lucide="x" id="hamburger-close-icon" class="w-4 h-4 hidden"></i>
     </button>
   </header>
 
-  <!-- Mobile Fullscreen Tray Navigation Overlay -->
+  <!-- Mobile Dropdown Navigation Tray -->
   <div id="mobile-nav-tray" class="fixed inset-x-0 top-[65px] bg-[#0b0c0e]/98 backdrop-blur-xl z-[70] flex flex-col p-5 space-y-3 opacity-0 pointer-events-none transition-all duration-300 md:hidden border-b border-zinc-800 shadow-2xl">
     <button id="mobile-nav-index" class="w-full flex items-center justify-between p-3.5 border border-zinc-800 bg-zinc-900/60 hover:border-orange-500 text-zinc-100 font-mono-space text-xs tracking-widest uppercase transition-colors">
       <div class="flex items-center gap-3">
         <i data-lucide="grid" class="w-4 h-4 text-orange-500"></i>
-        <span>INDEX CATALOG [08]</span>
+        <span>INDEX CATALOG [07]</span>
       </div>
       <i data-lucide="chevron-right" class="w-4 h-4 text-zinc-500"></i>
     </button>
@@ -212,53 +187,44 @@
     </button>
   </div>
 
-  <!-- Left Sidebar / Scroll Progress Status -->
+  <!-- Bottom Left Project HUD Indicator -->
   <div class="absolute left-6 md:left-8 bottom-8 z-30 flex flex-col items-start gap-4 pointer-events-none">
     <div class="flex items-end gap-3 pointer-events-auto">
-      <span class="text-3xl md:text-5xl font-syne font-extrabold leading-none text-orange-500" id="active-num">08</span>
+      <span class="text-3xl md:text-5xl font-syne font-extrabold leading-none text-orange-500" id="active-num">07</span>
       <div class="flex flex-col pb-1">
-        <span class="text-[9px] font-mono-space tracking-wider text-zinc-600 uppercase" id="active-category-label">SAAS</span>
-        <span class="text-xs font-mono-space font-medium tracking-tight text-zinc-300" id="active-title-label">MCIM</span>
+        <span class="text-[9px] font-mono-space tracking-wider text-zinc-600 uppercase" id="active-category-label">DESIGN STUDIO</span>
+        <span class="text-xs font-mono-space font-medium tracking-tight text-zinc-300" id="active-title-label">RocketAir</span>
       </div>
     </div>
   </div>
 
-  <!-- Vertical Scroll Indicator bar -->
+  <!-- Vertical Scroll Gauge -->
   <div class="absolute right-8 top-1/4 h-2/4 w-[1px] bg-zinc-800 z-30 hidden md:block">
     <div id="scroll-progress-indicator" class="w-[2px] bg-orange-500 absolute top-0 -left-[0.5px] transition-all duration-100" style="height: 15%; top: 0%;"></div>
   </div>
 
-  <!-- Three.js Canvas Container -->
+  <!-- WebGL Container -->
   <div id="webgl-container" class="w-full h-full absolute inset-0 z-10 cursor-default"></div>
 
-  <!-- Project Drawer Panel -->
+  <!-- Project Drawer Modal -->
   <div id="project-drawer" class="fixed top-0 right-0 h-full w-full lg:w-[58%] xl:w-[63%] 2xl:w-[65%] bg-[#0f1114] shadow-2xl border-l border-zinc-800 z-50 translate-x-full transition-transform duration-700 ease-out flex flex-col text-zinc-100">
-
-    <!-- Scrollable body -->
     <div class="flex-1 overflow-y-auto custom-scroll">
-
-      <!-- Header: close + tag -->
       <div class="px-5 md:px-8 pt-7 pb-0 flex justify-between items-start">
         <div class="flex items-center gap-2">
           <span class="text-[10px] font-mono-space px-2 py-1 bg-orange-500 rounded-none text-black font-bold" id="drawer-tag">TAG</span>
-          <span class="text-[10px] font-mono-space text-zinc-500" id="drawer-date">2026</span>
         </div>
         <button id="close-drawer" class="flex items-center gap-1.5 px-3 py-1.5 border border-zinc-700 rounded-none text-zinc-400 hover:text-zinc-100 hover:border-zinc-400 transition-all duration-200 text-xs font-mono-space">
           CLOSE <i data-lucide="x" class="w-3.5 h-3.5 inline-block"></i>
         </button>
       </div>
 
-      <!-- Title + tagline -->
       <div class="px-5 md:px-8 pt-5 pb-6">
         <h2 class="text-2xl md:text-4xl font-syne font-extrabold tracking-widest leading-tight mb-1.5 text-zinc-100" id="drawer-title">Project Title</h2>
         <p class="text-sm md:text-base text-zinc-500 font-mono-space" id="drawer-tagline">Tagline</p>
       </div>
 
-      <!-- Cover image -->
       <div class="relative group mx-5 md:mx-8 rounded-none overflow-hidden bg-zinc-900 flex justify-center items-center border border-zinc-800 cursor-pointer" id="drawer-cover">
-        <div id="drawer-cover-media" class="w-full flex justify-center items-center">
-        </div>
-
+        <div id="drawer-cover-media" class="w-full flex justify-center items-center"></div>
         <div class="absolute bottom-3 right-3 px-3 py-1.5 bg-[#0f1114]/90 backdrop-blur border border-zinc-700 group-hover:border-orange-500 text-zinc-300 group-hover:text-orange-500 transition-all duration-300 flex items-center gap-2 pointer-events-none select-none shadow-xl">
           <span class="text-[9px] font-mono-space tracking-widest font-bold uppercase">EXPAND VIEW</span>
           <svg class="w-3.5 h-3.5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -267,14 +233,11 @@
         </div>
       </div>
 
-      <!-- Gallery row -->
       <div class="px-5 md:px-8 pt-6" id="drawer-images-section" style="display:none;">
         <p class="text-[10px] font-mono-space text-zinc-500 block uppercase tracking-widest mb-3">Project Gallery</p>
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2.5 w-full" id="drawer-images-grid">
-        </div>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2.5 w-full" id="drawer-images-grid"></div>
       </div>
 
-      <!-- Meta: client + services + summary -->
       <div class="px-5 md:px-8 pt-7 pb-4 space-y-6">
         <div class="grid grid-cols-2 gap-6">
           <div>
@@ -292,7 +255,6 @@
           <p class="text-zinc-400 leading-relaxed text-sm font-mono-space whitespace-pre-line" id="drawer-description">—</p>
         </div>
       </div>
-
     </div>
 
     <div class="px-5 md:px-8 py-5 border-t border-zinc-800 bg-[#0f1114] flex items-center justify-between shrink-0 select-none">
@@ -305,20 +267,18 @@
     </div>
   </div>
 
-  <!-- INDEX [08] Catalog Overlay -->
+  <!-- Index Overlay -->
   <div id="index-overlay" class="fixed inset-0 z-[80] bg-[#0b0c0e]/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col justify-between p-6 md:p-12 text-zinc-100 overflow-hidden">
-    <!-- Overlay Top Bar -->
     <div class="flex justify-between items-center border-b border-zinc-800/80 pb-6 shrink-0">
       <div class="flex items-center gap-3">
         <span class="inline-block w-2.5 h-2.5 bg-orange-500"></span>
-        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">PROJECTS INDEX // 08 — 01</span>
+        <span class="text-xs font-mono-space tracking-widest text-zinc-400 uppercase">PROJECTS INDEX // 07 — 01</span>
       </div>
       <button id="close-index" class="flex items-center gap-2 px-4 py-2 border border-zinc-700 hover:border-orange-500 rounded-none text-zinc-300 hover:text-orange-500 font-mono-space text-xs transition-colors">
         <span>CLOSE</span> <i data-lucide="x" class="w-4 h-4"></i>
       </button>
     </div>
 
-    <!-- Overlay Body Table -->
     <div class="flex-1 my-6 overflow-y-auto custom-scroll pr-2 relative">
       <table class="w-full text-left font-mono-space text-xs md:text-sm border-collapse">
         <thead>
@@ -327,12 +287,10 @@
             <th class="py-3 px-4">CLIENT / PROJECT</th>
             <th class="py-3 px-4 hidden md:table-cell">CATEGORY</th>
             <th class="py-3 px-4 hidden sm:table-cell">SERVICES</th>
-            <th class="py-3 px-4 text-right">YEAR</th>
             <th class="py-3 px-2 text-right">ACTION</th>
           </tr>
         </thead>
-        <tbody id="index-table-body" class="divide-y divide-zinc-800/60">
-        </tbody>
+        <tbody id="index-table-body" class="divide-y divide-zinc-800/60"></tbody>
       </table>
     </div>
 
@@ -346,15 +304,13 @@
       </div>
     </div>
 
-    <!-- Overlay Bottom Footer Bar -->
     <div class="border-t border-zinc-800/80 pt-4 flex flex-col md:flex-row justify-between text-[10px] font-mono-space text-zinc-500 shrink-0 gap-2">
       <span>PRESS [I] OR [ESC] TO TOGGLE CATALOG</span>
     </div>
   </div>
 
-  <!-- LAB Overlay -->
+  <!-- Lab Experiments Overlay -->
   <div id="lab-overlay" class="fixed inset-0 z-[80] bg-[#0b0c0e]/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col justify-between p-6 md:p-12 text-zinc-100 overflow-hidden">
-    <!-- Top bar -->
     <div class="flex justify-between items-center border-b border-zinc-800/80 pb-6 shrink-0">
       <div class="flex items-center gap-3">
         <span class="inline-block w-2.5 h-2.5 bg-orange-500 animate-pulse"></span>
@@ -365,34 +321,30 @@
       </button>
     </div>
 
-    <!-- Body Layout with 4-Project Grid -->
-    <div class="flex-1 my-4 md:my-6 overflow-y-auto custom-scroll pr-2">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="lab-items-grid">
-      </div>
+    <div class="flex-1 my-4 md:my-6 overflow-y-auto custom-scroll pr-2 flex flex-col justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full" id="lab-items-grid"></div>
     </div>
 
-    <!-- Bottom Status Bar -->
     <div class="border-t border-zinc-800/80 pt-4 flex flex-col md:flex-row justify-between text-[10px] font-mono-space text-zinc-500 shrink-0 gap-2">
       <span>PRESS [ESC] TO EXIT LAB</span>
       <span class="text-zinc-400">RESEARCH & DEVELOPMENT // MATT BRISSETTE LABS</span>
     </div>
   </div>
 
-  <!-- Info Modal for About & Contact -->
+  <!-- About / Contact Information Modal -->
   <div id="info-modal" class="fixed inset-0 bg-black/90 backdrop-blur z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-4 select-text">
-    <div class="bg-[#0f1114] max-w-md w-full rounded-none p-6 md:p-8 border border-zinc-800 shadow-2xl space-y-6">
+    <div class="bg-[#0f1114] max-w-lg w-full rounded-none p-6 md:p-8 border border-zinc-800 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto custom-scroll">
       <div class="flex justify-between items-start">
         <h3 class="text-2xl font-syne font-bold text-zinc-100 tracking-widest" id="info-modal-title">ABOUT</h3>
         <button id="close-info-modal" class="p-1 border border-zinc-700 rounded-none text-zinc-400 hover:text-white hover:border-zinc-400 hover:bg-zinc-800 transition-colors">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
-      <div id="info-modal-content" class="text-sm text-zinc-400 font-mono-space leading-relaxed space-y-4">
-      </div>
+      <div id="info-modal-content" class="text-sm text-zinc-400 font-mono-space leading-relaxed space-y-4"></div>
     </div>
   </div>
 
-  <!-- Interactive HUD Element projecting above 3D space screens -->
+  <!-- Interactive HUD Prompt Projecting in 3D Space -->
   <div id="hud-prompt" class="absolute pointer-events-none z-30 opacity-0 transition-opacity duration-500 flex flex-col items-center">
     <div class="px-3 py-1.5 bg-orange-500 text-black border-0 rounded-none shadow-lg text-[10px] font-mono-space tracking-widest flex items-center gap-2 font-bold">
       <span class="inline-block w-1.5 h-1.5 bg-black rounded-full animate-pulse"></span>
@@ -416,13 +368,20 @@
       <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
     </button>
     <div id="lightbox-wrapper" class="w-full h-full flex items-center justify-center overflow-hidden px-14 py-20 md:px-20 md:py-24">
-      <img id="lightbox-img" src="" alt="Portfolio high-resolution viewport specification sheet" class="max-w-full max-h-full object-contain cursor-zoom-in transition-transform duration-300 ease-out select-none" draggable="false">
+      <img id="lightbox-img" src="" alt="Portfolio specification sheet" class="max-w-full max-h-full object-contain cursor-zoom-in transition-transform duration-300 ease-out select-none" draggable="false">
     </div>
-    <div id="lightbox-thumbnails" class="absolute bottom-3 md:bottom-6 flex gap-2 md:gap-3 z-[110] px-3 py-1.5 md:px-4 md:py-2 bg-zinc-900/90 border border-zinc-800 rounded-none backdrop-blur-sm max-w-[92vw] overflow-x-auto custom-scroll">
-    </div>
+    <div id="lightbox-thumbnails" class="absolute bottom-3 md:bottom-6 flex gap-2 md:gap-3 z-[110] px-3 py-1.5 md:px-4 md:py-2 bg-zinc-900/90 border border-zinc-800 rounded-none backdrop-blur-sm max-w-[92vw] overflow-x-auto custom-scroll"></div>
   </div>
 
   <script>
+    // Safeguard BufferGeometryUtils
+    const mergeGeometriesSafe = (geometries) => {
+      if (window.THREE && THREE.BufferGeometryUtils && THREE.BufferGeometryUtils.mergeBufferGeometries) {
+        return THREE.BufferGeometryUtils.mergeBufferGeometries(geometries);
+      }
+      return geometries[0] || new THREE.BufferGeometry();
+    };
+
     const loadingScreen = document.getElementById('loading-screen');
     const loadingInner = document.getElementById('loading-inner');
     if (loadingInner) {
@@ -439,10 +398,9 @@
       setTimeout(() => { loadingScreen.style.display = 'none'; }, 750);
     }
 
-    // Initialize Lucide Icons
     if (window.lucide) lucide.createIcons();
 
-    /* Global DOM Element Declarations */
+    /* Global DOM Element References */
     const cursor = document.getElementById('custom-cursor');
     const cursorDot = document.getElementById('custom-cursor-dot');
     const activeNum = document.getElementById('active-num');
@@ -555,80 +513,126 @@
     const projects = [
       {
         num: "01",
-        title: "Revenue Grid",
-        tagline: "AI-driven Revenue Intelligence & Sales Engagement Platform",
-        client: "Revenue Grid",
-        services: "UX, Art Direction, Design Lead",
-        desc: "Challenge:\nRevenue Grid needed an upgraded digital experience and product presentation to showcase its AI-driven revenue intelligence and sales engagement platform to enterprise clients.\n\nSolution:\nDesigned an enterprise-grade digital experience with refined UX, bold visual hierarchy, and intuitive interface design highlighting real-time sales insights, automated pipeline management, and seamless CRM integrations.",
-        colors: ["#020914", "#291a10", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "B2B",
-        tech: ["Product Design", "Design Systems", "Analytics", "Tailwind CSS"],
-        date: "2023",
+        title: "Bentley Motors Canada",
+        tagline: "Luxury automotive digital application & concierge experience",
+        client: "Bentley Motors Canada",
+        services: "Product Design, UX/UI, Art Direction",
+        desc: "A bespoke digital application experience created for Bentley Motors Canada, delivering seamless luxury vehicle exploration, customer concierge interactions, and intuitive digital touchpoints.\n\nLed the end-to-end mobile product design, visual language, and interaction details to reflect Bentley's heritage of craftsmanship in a refined, modern mobile format.",
+        colors: ["#0a0a09", "#1c241e", "#2e5a44", "#3e8e60", "#ffffff"],
+        tag: "APP",
+        tech: ["Mobile Product Design", "iOS & Android", "Design Systems", "Luxury UI"],
+        date: "2024",
         images: [
-          "https://mbrissette.x02.me/i/7NKK.webp",
-          "https://mbrissette.x02.me/i/S73V.webp",
-          "https://mbrissette.x02.me/i/JDVG.webp",
-          "https://mbrissette.x02.me/i/YPP6.webp",
-          "https://mbrissette.x02.me/i/CUFFZ8.webp",
-          "https://mbrissette.x02.me/i/8K8TF.webp",
-          "https://mbrissette.x02.me/i/PXNQT.webp",
-          "https://mbrissette.x02.me/i/MTQSRG.webp"
+          "https://mbrissette.x02.me/i/AEZF.webp",
+          "https://mbrissette.x02.me/i/Q25BMZ.webp",
+          "https://mbrissette.x02.me/i/GSXP9H.webp",
+          "https://mbrissette.x02.me/i/B77GE.webp",
+          "https://mbrissette.x02.me/i/2VVA.webp",
+          "https://mbrissette.x02.me/i/EKW9FB.webp",
+          "https://mbrissette.x02.me/i/GPRV.webp",
+          "https://mbrissette.x02.me/i/HGNGBH.webp"
         ],
         link: ""
       },
       {
         num: "02",
-        title: "YAT",
-        tagline: "A seamless sign-in experience for connecting wallets and managing NFTs",
-        client: "YAT",
-        services: "Strategy, UX, Design",
-        desc: "Challenge:\nDesign a seamless Web3 onboarding experience that simplifies wallet connection and NFT management while building trust with a crypto-native audience that expects transparency, security, and usability.\n\nSolution:\nCreated an intuitive onboarding flow with clear guidance, transparent permission states, and real-time system feedback. Combined with a refined visual language, the experience makes wallet and NFT interactions feel simple, secure, and trustworthy.",
-        colors: ["#0c0d0e", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "WEB3",
-        tech: ["Next.js", "Web3 Integration", "Tailwind CSS"],
-        date: "2022",
+        title: "Terraformation",
+        tagline: "Global Forest Carbon Accelerator & Native Restoration Platform",
+        client: "Terraformation",
+        services: "UX, Art Direction, Design Lead",
+        desc: "Challenge:\nTerraformation is dedicated to solving the biggest bottlenecks to native, biodiverse forest restoration to stabilize our climate. To launch the Seed to Forest Alliance and connect forestry teams with global funding, seed banking infrastructure, and carbon markets, the organization needed a high-impact digital presence that combined ecological credibility with modern technology-forward design.\n\nSolution:\nI led the UX, information architecture, and visual design for Terraformation's digital experience and the Seed to Forest Alliance platform. We created an intuitive narrative structure and refined visual design system centered around biodiversity, transparency, and scalable climate action—helping global partners, landowners, and carbon buyers unite to accelerate gigaton-scale carbon drawdown.",
+        colors: ["#111e15", "#1b3323", "#437a54", "#6cae75", "#f2f7f2"],
+        tag: "CLIMATE TECH",
+        tech: ["UX & UI Design", "Design Systems", "Climate Tech", "Interactive Storytelling"],
+        date: "2023",
         images: [
-          "https://mbrissette.x02.me/i/XD7U.webp",
-          "https://mbrissette.x02.me/i/TNPE.webp",
-          "https://mbrissette.x02.me/i/7S7X3.webp",
-          "https://mbrissette.x02.me/i/JYV543.webp",
-          "https://mbrissette.x02.me/i/AEXNYN.webp",
-          "https://mbrissette.x02.me/i/3XQFXR.webp",
-          "https://mbrissette.x02.me/i/ERN67R.webp",
-          "https://mbrissette.x02.me/i/SVNF.webp"
+          "https://mbrissette.x02.me/i/8A3BC.webp",
+          "https://mbrissette.x02.me/i/J4SXXH.webp",
+          "https://mbrissette.x02.me/i/QSZXM.webp",
+          "https://mbrissette.x02.me/i/7HVHG.webp",
+          "https://mbrissette.x02.me/i/8SV4.webp",
+          "https://mbrissette.x02.me/i/BGJQXY.webp",
+          "https://mbrissette.x02.me/i/M6QU.webp",
+          "https://mbrissette.x02.me/i/QQ5VZ.webp"
         ],
         link: ""
       },
       {
         num: "03",
-        title: "BadCarbon",
-        tagline: "B2B carbon management & sustainability interface",
-        client: "BadCarbon",
-        services: "UX, Art Direction, Design",
-        desc: "Challenge:\nBadCarbon had an innovative platform for measuring and reducing digital carbon emissions, but its brand lacked the clarity and credibility needed to resonate with enterprise customers and sustainability-conscious organizations.\n\nSolution:\nWe evolved the visual identity with a modern, technology-forward brand system and designed a new website that simplified the product story, communicated its value with confidence, and positioned BadCarbon as a trusted leader in sustainable digital infrastructure.",
-        colors: ["#0a0a09", "#1c241e", "#2e5a44", "#3e8e60", "#ffffff"],
-        tag: "B2B",
-        tech: ["Product Design", "B2B SaaS", "Design Systems", "Analytics"],
-        date: "2024",
+        title: "Oatfi",
+        tagline: "B2B payment & embedded capital infrastructure",
+        client: "Oatfi",
+        services: "Strategy, UX, Design, Illustration",
+        desc: "OatFi is a fintech lender focused on B2B payments, offering API infrastructure that lets platforms embed working capital tools directly into payment flows.\n\nAs OatFi exited stealth mode, I helped shape its positioning as a modern alternative to traditional lenders, contributing to a bold, dynamic brand built around black, white, and neon accents. I worked on the visual identity and modular design system, creating an adaptable language that reflected how OatFi’s API integrates across different platforms and industries.\n\nFor the website, I led the UX strategy, information architecture, and design—creating custom icons, custom illustrations, and brand guidelines to deliver a simple and engaging experience that clearly communicates OatFi’s product, differentiation, and value through bold visuals, natural language, and purposeful microinteractions.",
+        colors: ["#0c0d0e", "#292014", "#dfb76c", "#ffd700", "#1c1d1e"],
+        tag: "FINTECH",
+        tech: ["Next.js", "Financial Ledger Architecture", "Tailwind CSS", "REST APIs"],
+        date: "2022",
         images: [
-          "https://mbrissette.x02.me/i/GCC5HW.webp",
-          "https://mbrissette.x02.me/i/AS67.webp",
-          "https://mbrissette.x02.me/i/P85SK.webp",
-          "https://mbrissette.x02.me/i/R8QD.webp",
-          "https://mbrissette.x02.me/i/C6NJ.webp",
-          "https://mbrissette.x02.me/i/SCV98.webp",
-          "https://mbrissette.x02.me/i/XWS9.webp",
-          "https://mbrissette.x02.me/i/VZAX.webp"
+          "https://mbrissette.x02.me/i/GFTN.webp",
+          "https://mbrissette.x02.me/i/383CP.webp",
+          "https://mbrissette.x02.me/i/FZ8M.webp",
+          "https://mbrissette.x02.me/i/8UK8XE.webp",
+          "https://mbrissette.x02.me/i/V98Q4.webp",
+          "https://mbrissette.x02.me/i/7XQT8F.webp",
+          "https://mbrissette.x02.me/i/TU474.webp",
+          "https://mbrissette.x02.me/i/5Y5U5U.webp"
         ],
         link: ""
       },
       {
         num: "04",
+        title: "Stryx",
+        tagline: "Direct-to-consumer eCommerce & men's skincare brand",
+        client: "Stryx",
+        services: "UX, Art Direction, Design Lead, DTC",
+        desc: "Stryx is a men’s grooming and skincare brand that was expanding across nationwide retail while growing its direct-to-consumer business. The brand needed a digital experience that could support that growth while making it easier for customers to discover, understand, and purchase its products.\n\nI led the design, UX, and digital strategy for Stryx’s Shopify eCommerce experience. We evolved the visual identity into a more confident, premium system and reworked the customer journey across product discovery, education, bundling, and checkout. The experience included custom bundle configurators, clearer product storytelling, and a streamlined path to purchase, creating a more cohesive DTC experience from first visit to conversion.",
+        colors: ["#0c0d0e", "#1c1811", "#dfb76c", "#ffd700", "#ffffff"],
+        tag: "DTC ECOMMERCE",
+        tech: ["Shopify Plus", "eCommerce UX", "Design Systems", "DTC Strategy"],
+        date: "2022",
+        images: [
+          "https://mbrissette.x02.me/i/AMY39Z.webp",
+          "https://mbrissette.x02.me/i/9FUGQP.webp",
+          "https://mbrissette.x02.me/i/P3FDJ2.webp",
+          "https://mbrissette.x02.me/i/3UKMED.webp",
+          "https://mbrissette.x02.me/i/GA3BB3.webp",
+          "https://mbrissette.x02.me/i/C5TZQ.webp",
+          "https://mbrissette.x02.me/i/VKAR.webp",
+          "https://mbrissette.x02.me/i/8DJ26K.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "05",
+        title: "MCIM",
+        tagline: "Modernizing a Mission-Critical Brand",
+        client: "MCIM",
+        services: "UX, Art Direction, Design Lead",
+        desc: "Challenge:\nPE-backed tech company Fulcrum Collaborations was growing fast. As awareness expanded for both the corporate brand and its flagship SaaS product, MCIM (Mission Critical Information Management), it became clear that future growth would be amplified by the power of one cohesive brand. Fulcrum sought a unified, scalable brand – and a bold new website to define it.\n\nSolution:\nI helped evolve MCIM’s existing brand into a more modern, confident, and technology-focused identity while preserving the recognition they had already built—creating the overall art direction, comprehensive brand guidelines, and custom iconography. For the website, I led the UX and wireframing process before designing the final experience, creating a clearer digital presence that communicates what MCIM does, who they serve, and why they’re a trusted leader in their industry.\n\nThe result was a single global identity supporting expansion across 90+ countries – and, in the CMO’s words, “immediate improvement in leads and market reaction.”",
+        colors: ["#120124", "#241910", "#dfb76c", "#ffd700", "#ffffff"],
+        tag: "SAAS",
+        tech: ["Web Audio API", "Svelte", "GLSL Shaders", "Tailwind UI"],
+        date: "2025",
+        images: [
+          "https://x02.me/i/RGCKZW.webp",
+          "https://mbrissette.x02.me/i/7RVN.webp",
+          "https://mbrissette.x02.me/i/YJGQ.webp",
+          "https://mbrissette.x02.me/i/B8UQHT.webp",
+          "https://mbrissette.x02.me/i/X43YV6.webp",
+          "https://mbrissette.x02.me/i/HHDQZ.webp",
+          "https://mbrissette.x02.me/i/3JS9H.webp",
+          "https://mbrissette.x02.me/i/F8HTEQ.webp"
+        ],
+        link: ""
+      },
+      {
+        num: "06",
         title: "Larus",
         tagline: "Designed to help visitors explore Larus' products through intuitive navigation, interactive storytelling, and real-time 3D graphics.",
         client: "Larus",
         services: "UX, Art Direction, Design, 3d",
-        desc: "Trade show conversations are short, and complex enterprise software is difficult to communicate in just a few minutes. To bridge that gap, I designed and built an interactive 3D exhibition experience, leveraging AI-assisted development with Gemini and Claude, that combines storytelling, product demonstrations, downloadable resources, and lead generation into a single immersive experience accessible from any browser.\n\nhttps://mattbrissette.github.io/3d_booth/",
+        desc: "Trade show conversations are short, and complex enterprise software is difficult to communicate in just a few minutes. To bridge that gap, I designed and built an interactive 3D exhibition experience, leveraging AI-assisted development with Gemini and Claude, that combines storytelling, product demonstrations, downloadable resources, and lead generation into a single immersive experience accessible from any browser.\n\nhttps://mattbrissette.github.io/3d_booth/\n\n• Three.js / WebGL — Real-time 3D environment with interactive camera controls and scene management.\n• Custom Shaders & Post-Processing — ShaderPass, UnrealBloom and custom rendering effects for a cinematic visual experience.\n• Real-Time Reflections — Dynamic reflective surfaces using Three.js Reflector.\n• JavaScript — Custom interaction logic, navigation, UI states and dynamic 3D scene controls.\n• GSAP & Lenis — Smooth transitions, animation sequencing and fluid interactions between the interface and 3D environment.",
         colors: ["#141412", "#2e281e", "#dfb76c", "#ffd700", "#ffffff"],
         tag: "WebGL, Threejs",
         tech: ["Three.js", "GSAP", "GLSL Shaders", "Fluid Dynamics", "Creative Direction"],
@@ -646,52 +650,6 @@
         link: ""
       },
       {
-        num: "05",
-        title: "CargoSprint",
-        tagline: "Supply Chain Orchestration Platform",
-        client: "CargoSprint",
-        services: "UX, Art Direction, Design Lead",
-        desc: "Challenge:\nCargoSprint had outgrown its brand. As the company evolved from a specialized cargo payments provider into a broader logistics technology platform, its identity no longer reflected the scale of its offerings or its position within the industry.\n\nSolution:\nI led the UX, information architecture, and visual design for CargoSprint’s new website, creating a clearer experience centered around speed, visibility, and operational efficiency. I also contributed to the evolution of the brand, creating comprehensive brand guidelines, photography art direction, and a refreshed visual language and design system that better showcased CargoSprint’s payment, appointment, and cargo visibility solutions while strengthening its positioning with global supply chain leaders.\n\nRapid Growth:\nIn less than a year following launch, CargoSprint nearly tripled its headcount, completed another major acquisition, and established a digital platform built to support continued growth and expansion.",
-        colors: ["#1c1c1a", "#292116", "#dfb76c", "#ffd700", "#fffdf9"],
-        tag: "SUPPLY CHAIN SAAS",
-        tech: ["Solid.js", "WebGL Shaders", "TailwindCSS", "Node.js Platform"],
-        date: "2025",
-        images: [
-          "https://x02.me/i/9U3J.webp",
-          "https://mbrissette.x02.me/i/Q4E6P.webp",
-          "https://mbrissette.x02.me/i/W74R.webp",
-          "https://mbrissette.x02.me/i/5Q9J8.webp",
-          "https://mbrissette.x02.me/i/RFD76.webp",
-          "https://mbrissette.x02.me/i/2KXDZA.webp",
-          "https://mbrissette.x02.me/i/29ZAF.webp",
-          "https://mbrissette.x02.me/i/YHYS.webp"
-        ],
-        link: ""
-      },
-      {
-        num: "06",
-        title: "Oatfi",
-        tagline: "B2B payment & embedded capital infrastructure",
-        client: "Oatfi",
-        services: "Strategy, UX, Design, Illustration",
-        desc: "OatFi is a fintech lender focused on B2B payments, offering API infrastructure that lets platforms embed working capital tools directly into payment flows.\n\nAs OatFi exited stealth mode, I helped shape its positioning as a modern alternative to traditional lenders, contributing to a bold, dynamic brand built around black, white, and neon accents. I worked on the visual identity and modular design system, creating an adaptable language that reflected how OatFi’s API integrates across different platforms and industries.\n\nFor the website, I led the UX strategy, information architecture, and design—creating custom icons, custom illustrations, and brand guidelines to deliver a simple and engaging experience that clearly communicates OatFi’s product, differentiation, and value through bold visuals, natural language, and purposeful microinteractions.",
-        colors: ["#0c0d0e", "#292014", "#dfb76c", "#ffd700", "#1c1d1e"],
-        tag: "FINTECH",
-        tech: ["Next.js", "Financial Ledger Architecture", "Tailwind CSS", "REST APIs"],
-        date: "2022",
-        images: [
-          "https://mbrissette.x02.me/i/RUS6B.webp",
-          "https://mbrissette.x02.me/i/WE4K5N.webp",
-          "https://mbrissette.x02.me/i/383CP.webp",
-          "https://mbrissette.x02.me/i/VFT5FD.webp",
-          "https://mbrissette.x02.me/i/V98Q4.webp",
-          "https://mbrissette.x02.me/i/7XQT8F.webp",
-          "https://mbrissette.x02.me/i/TU474.webp",
-          "https://mbrissette.x02.me/i/5Y5U5U.webp"
-        ],
-        link: ""
-      },
-      {
         num: "07",
         title: "RocketAir",
         tagline: "Design & motion studio digital experience",
@@ -705,37 +663,14 @@
         images: [
           "https://mbrissette.x02.me/i/YQKSH.webp",
           "https://mbrissette.x02.me/i/EUDDG.gif",
-          "https://mbrissette.x02.me/i/T4G7YG.webp",
-          "https://mbrissette.x02.me/i/J476CC.webp",
           "https://mbrissette.x02.me/i/6Z3HY6.webp",
+          "https://mbrissette.x02.me/i/J476CC.webp",
+          "https://mbrissette.x02.me/i/T4G7YG.webp",
           "https://mbrissette.x02.me/i/BE9BD.webp",
           "https://mbrissette.x02.me/i/R9ENXQ.webp",
           "https://mbrissette.x02.me/i/XT3A.webp"
         ],
         link: "https://www.rocketair.com/"
-      },
-      {
-        num: "08",
-        title: "MCIM",
-        tagline: "Modernizing a Mission-Critical Brand",
-        client: "MCIM",
-        services: "UX, Art Direction, Design Lead",
-        desc: "Challenge:\nPE-backed tech company Fulcrum Collaborations was growing fast. As awareness expanded for both the corporate brand and its flagship SaaS product, MCIM (Mission Critical Information Management), it became clear that future growth would be amplified by the power of one cohesive brand. Fulcrum sought a unified, scalable brand – and a bold new website to define it.\n\nSolution:\nI helped evolve MCIM’s existing brand into a more modern, confident, and technology-focused identity while preserving the recognition they had already built—creating the overall art direction, comprehensive brand guidelines, and custom iconography. For the website, I led the UX and wireframing process before designing the final experience, creating a clearer digital presence that communicates what MCIM does, who they serve, and why they’re a trusted leader in their industry.\n\nThe result was a single global identity supporting expansion across 90+ countries – and, in the CMO’s words, “immediate improvement in leads and market reaction.”",
-        colors: ["#120124", "#241910", "#dfb76c", "#ffd700", "#ffffff"],
-        tag: "SAAS",
-        tech: ["Web Audio API", "Svelte", "GLSL Shaders", "Tailwind UI"],
-        date: "2025",
-        images: [
-          "https://x02.me/i/RGCKZW.webp",
-          "https://mbrissette.x02.me/i/7RVN.webp",
-          "https://mbrissette.x02.me/i/YJGQ.webp",
-          "https://mbrissette.x02.me/i/B8UQHT.webp",
-          "https://mbrissette.x02.me/i/X43YV6.webp",
-          "https://mbrissette.x02.me/i/HHDQZ.webp",
-          "https://mbrissette.x02.me/i/ZDVPY.webp",
-          "https://mbrissette.x02.me/i/UTJQ.webp"
-        ],
-        link: ""
       }
     ];
 
@@ -747,22 +682,16 @@
         link: "https://mattbrissette.github.io/pastel_dream/"
       },
       {
-        title: "PROCEDURAL LIGHT TUNNEL EXPERIENCE",
-        desc: "An experimental WebGL environment exploring procedural motion, infinite flight paths, and immersive spatial lighting. Built with custom shader systems, dynamic ribbon geometry, particle fields, bloom effects, and real-time camera navigation.",
-        image: "https://mbrissette.x02.me/i/EGHZC5.mp4",
-        link: "https://mattbrissette.github.io/light_tunnel/"
+        title: "3D Glass Cube",
+        desc: "Built with Three.js, CSS3DRenderer, and custom WebGL shaders, this interactive portfolio transforms traditional profile content into a navigable 3D glass cube experience. The project combines real-time rendering, procedural environments, post-processing effects, dynamic lighting, and CSS-driven interfaces.",
+        image: "https://mbrissette.x02.me/i/CDQER.webp",
+        link: "https://mattbrissette.github.io/glass-cube/"
       },
       {
         title: "Kinetic Columns",
         desc: "3D exploration built with Three.js and WebGL. Using procedural animation, audio-reactive motion, and interactive controls, it transforms a simple grid of columns into a dynamic digital playground.",
         image: "https://mbrissette.x02.me/i/XTQAWM.webp",
         link: "https://mattbrissette.github.io/Kinetic_Columns/"
-      },
-      {
-        title: "S3M Lab",
-        desc: "An experimental digital experience exploring 3D, motion & light. Built with Three.js, WebGL, JavaScript, HTML, and CSS",
-        image: "https://mbrissette.x02.me/i/N8TX.webp",
-        link: "https://mattbrissette.github.io/S3-McMillan-Lab/"
       }
     ];
 
@@ -803,7 +732,6 @@
     }
     registerHoverEvents();
 
-    /* LAB Section Implementation */
     let isLabOpen = false;
 
     function renderLabGrid() {
@@ -1279,6 +1207,7 @@
     slideMesh.updateMatrix();
     stepsGroup.add(slideMesh);
 
+    // Guardrail Rim Mesh
     const borderGeom = new THREE.BufferGeometry();
     const borderVertices = [];
     const borderIndices = [];
@@ -1368,7 +1297,7 @@
       envMapIntensity: 1.6
     });
 
-    const totalProjects = projects.length; // 8 projects
+    const totalProjects = projects.length; // 7 projects
     projects.forEach((proj, idx) => {
       const stepIdx = Math.floor(18 + idx * (120 / (totalProjects - 1)));
       const ratio = stepIdx / numSteps;
@@ -1444,7 +1373,7 @@
       const clampPlateGeom = new THREE.BoxGeometry(0.25, 0.35, 0.02);
       clampPlateGeom.translate(0, -0.28, -0.03 - armLength);
 
-      const mergedBracketGeom = THREE.BufferGeometryUtils.mergeBufferGeometries([hingeGeom, armGeom, clampPlateGeom]);
+      const mergedBracketGeom = mergeGeometriesSafe([hingeGeom, armGeom, clampPlateGeom]);
       const mergedBracketMesh = new THREE.Mesh(mergedBracketGeom, concreteMaterial);
       mergedBracketMesh.castShadow = true;
       mergedBracketMesh.receiveShadow = true;
@@ -1461,7 +1390,7 @@
         bg.translate(b[0], -0.28 + b[1], -0.03 - armLength + 0.012);
         boltGeoms.push(bg);
       });
-      const mergedBoltsGeom = THREE.BufferGeometryUtils.mergeBufferGeometries(boltGeoms);
+      const mergedBoltsGeom = mergeGeometriesSafe(boltGeoms);
       const mergedBoltsMesh = new THREE.Mesh(mergedBoltsGeom, goldBoltsMat);
       mergedBoltsMesh.castShadow = false;
       mergedBoltsMesh.matrixAutoUpdate = false;
@@ -1519,7 +1448,7 @@
     let isTransitioning = false; 
     let scrollProgress = 0.07800; 
     let targetScrollProgress = 0.07800;
-    let activeProjectIndex = 7; // Starts centered on MCIM (08)
+    let activeProjectIndex = 6; // RocketAir (07)
 
     let scrollVelocity = 0.0;
     const FRICTION = 0.82;
@@ -1535,8 +1464,15 @@
       lastInteractionTime = Date.now();
     }
 
+    function isModalOrOverlayActive() {
+      const isInfoActive = infoModal && !infoModal.classList.contains('pointer-events-none');
+      const isLightboxActive = lightboxModal && !lightboxModal.classList.contains('pointer-events-none');
+      return isFocused || isIndexOpen || isLabOpen || isInfoActive || isLightboxActive;
+    }
+
     window.addEventListener('wheel', (e) => {
-      if (isFocused || isIndexOpen || isLabOpen) return;
+      if (isModalOrOverlayActive()) return;
+      if (e.target.closest('#info-modal, #project-drawer, #index-overlay, #lab-overlay, #lightbox-modal')) return;
       e.preventDefault();
       resetIdleTimer();
       const clamped = Math.max(-40, Math.min(40, e.deltaY));
@@ -1550,7 +1486,8 @@
       scrollVelocity = 0;
     });
     window.addEventListener('touchmove', (e) => {
-      if (isFocused || isIndexOpen || isLabOpen) return;
+      if (isModalOrOverlayActive()) return;
+      if (e.target.closest('#info-modal, #project-drawer, #index-overlay, #lab-overlay, #lightbox-modal')) return;
       resetIdleTimer();
       const delta = touchStart - e.touches[0].clientY;
       scrollVelocity += delta * TOUCH_SENSITIVITY;
@@ -1558,7 +1495,7 @@
     }, { passive: true });
 
     window.addEventListener('keydown', (e) => {
-      if (isFocused || isIndexOpen || isLabOpen) return;
+      if (isModalOrOverlayActive()) return;
       const down = e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown';
       const up   = e.key === 'ArrowUp'   || e.key === 'ArrowLeft'  || e.key === 'PageUp';
       if (!down && !up) return;
@@ -1920,7 +1857,6 @@
           </td>
           <td class="py-4 px-4 hidden md:table-cell text-zinc-400 font-mono-space text-xs uppercase">${proj.tag}</td>
           <td class="py-4 px-4 hidden sm:table-cell text-zinc-500 font-mono-space text-xs">${proj.services}</td>
-          <td class="py-4 px-4 text-right font-mono-space text-zinc-400">${proj.date}</td>
           <td class="py-4 px-2 text-right">
             <span class="inline-flex items-center gap-1 text-[10px] font-bold tracking-widest text-zinc-400 group-hover:text-orange-400 group-hover:translate-x-1 transition-all">
               VIEW <i data-lucide="arrow-right" class="w-3 h-3"></i>
@@ -1988,7 +1924,7 @@
       }
     }
 
-    /* 3D Parallax Tilt Mouse Move Handler */
+    // 3D Parallax Tilt Mouse Move Handler
     window.addEventListener('mousemove', (e) => {
       if (isIndexOpen && indexHoverPreview && indexHoverPreview.classList.contains('opacity-100')) {
         const previewWidth = indexHoverPreview.offsetWidth || 320;
@@ -2096,7 +2032,6 @@
       const el = id => document.getElementById(id);
 
       if (el('drawer-tag'))         el('drawer-tag').innerText = p.tag;
-      if (el('drawer-date'))        el('drawer-date').innerText = p.date;
       if (el('drawer-title'))       el('drawer-title').innerText = p.title;
       if (el('drawer-tagline'))     el('drawer-tagline').innerText = p.tagline;
       if (el('drawer-client'))      el('drawer-client').innerText = p.client;
@@ -2107,7 +2042,6 @@
       }
 
       activeSlides = [];
-      
       for (let i = 0; i <= 7; i++) {
         activeSlides.push(getSlidePlaceholder(p, i));
       }
@@ -2210,16 +2144,18 @@
       if (type === 'about' && infoModalTitle && infoModalContent) {
         infoModalTitle.innerText = "ABOUT";
         infoModalContent.innerHTML = `
-          <div class="flex items-center gap-4 mb-2">
+          <div class="flex items-center gap-4 mb-3">
             <img src="https://x02.me/i/Q87H7A.webp" onerror="this.src='https://placehold.co/120x120/111316/f97316?text=MB'" class="w-16 h-16 rounded-full border border-orange-500/50 object-cover shadow-lg shrink-0" alt="Matt Brissette">
             <div>
               <h4 class="text-zinc-100 font-syne font-bold text-lg tracking-wider">MATT BRISSETTE</h4>
-              <p class="text-[10px] text-orange-500 font-mono-space uppercase tracking-widest">Digital & Product Designer</p>
+              <p class="text-[10px] text-orange-500 font-mono-space uppercase tracking-widest">Senior Digital Designer</p>
             </div>
           </div>
-          <p class="text-zinc-300 leading-relaxed">I specialize in Visual Design, Art Direction, and Digital Product Design, with 10+ years of experience creating brands, digital products, and experiences for SaaS, technology, and consumer businesses.</p>
-          <p class="text-zinc-300 leading-relaxed">I integrate GenAI into my design workflow to accelerate research, content exploration, prototyping, and iteration while keeping user needs and business goals at the center of every decision.</p>
-          <p class="text-zinc-300 leading-relaxed">I'm also exploring 3D, WebGL, and creative technologies to craft more immersive digital experiences.</p>
+          <p class="text-zinc-300 leading-relaxed">I’m a Senior Digital Designer based in the Gatineau–Ottawa region with 10+ years of experience creating websites, digital products, brands, and interactive experiences across SaaS, eCommerce, and marketing.</p>
+          <p class="text-zinc-300 leading-relaxed">My background sits somewhere between visual design, UX/UI, product design, and interaction. I enjoy taking complex ideas from early exploration through to polished digital experiences, balancing strong storytelling and visual craft with usability, performance, and business goals.</p>
+          <p class="text-zinc-300 leading-relaxed">Over the years, I’ve worked with startups, ecommerce brands, and organizations across a wide range of industries, collaborating closely with clients, strategists, developers, and other designers. I’m comfortable leading the design process, presenting work, exploring different directions, and turning ideas and requirements into experiences that are ready to build.</p>
+          <p class="text-zinc-300 leading-relaxed">I also integrate GenAI into my workflow to accelerate research, exploration, prototyping, and iteration. More recently, I’ve been exploring 3D, WebGL, and creative technologies as new ways to create more immersive and memorable digital experiences.</p>
+          <p class="text-zinc-300 leading-relaxed">Always interested in creating work that is not only beautiful, but useful, thoughtful, and built to make an impact.</p>
         `;
       } else if (type === 'contact' && infoModalTitle && infoModalContent) {
         infoModalTitle.innerText = "GET IN TOUCH";
@@ -2250,14 +2186,21 @@
     const navAbout = document.getElementById('nav-about');
     const navContact = document.getElementById('nav-contact');
 
+    function closeInfoModal() {
+      if (infoModal) {
+        infoModal.classList.add('pointer-events-none');
+        infoModal.classList.remove('opacity-100');
+      }
+    }
+
     if (navAbout) navAbout.addEventListener('click', (e) => { e.preventDefault(); openInfoModal('about'); });
     if (navContact) navContact.addEventListener('click', (e) => { e.preventDefault(); openInfoModal('contact'); });
     if (closeInfoModalBtn) {
-      closeInfoModalBtn.addEventListener('click', () => {
-        if (infoModal) {
-          infoModal.classList.add('pointer-events-none');
-          infoModal.classList.remove('opacity-100');
-        }
+      closeInfoModalBtn.addEventListener('click', closeInfoModal);
+    }
+    if (infoModal) {
+      infoModal.addEventListener('click', (e) => {
+        if (e.target === infoModal) closeInfoModal();
       });
     }
 
@@ -2367,6 +2310,10 @@
           updateLightboxSlide(currentSlideIndex + 1);
         } else if (e.key === 'Escape') {
           closeLightbox();
+        }
+      } else if (infoModal && !infoModal.classList.contains('pointer-events-none')) {
+        if (e.key === 'Escape') {
+          closeInfoModal();
         }
       } else if (isLabOpen) {
         if (e.key === 'Escape') {
@@ -2612,28 +2559,30 @@
         }
 
         const activeMesh = activeProjectMeshes[activeProjectIndex];
-        const screenPos = new THREE.Vector3();
-        activeMesh.getWorldPosition(screenPos);
+        if (activeMesh) {
+          const screenPos = new THREE.Vector3();
+          activeMesh.getWorldPosition(screenPos);
 
-        const tempV = screenPos.clone();
-        tempV.y += 1.45; 
-        tempV.project(camera);
+          const tempV = screenPos.clone();
+          tempV.y += 1.45; 
+          tempV.project(camera);
 
-        if (hudPrompt) {
-          if (tempV.z > 0 && tempV.x > -1 && tempV.x < 1 && tempV.y > -1 && tempV.y < 1) {
-            const xScreen = (tempV.x * .5 + .5) * window.innerWidth;
-            const yScreen = (tempV.y * -.5 + .5) * window.innerHeight;
+          if (hudPrompt) {
+            if (tempV.z > 0 && tempV.x > -1 && tempV.x < 1 && tempV.y > -1 && tempV.y < 1) {
+              const xScreen = (tempV.x * .5 + .5) * window.innerWidth;
+              const yScreen = (tempV.y * -.5 + .5) * window.innerHeight;
 
-            hudPrompt.style.left = `${xScreen}px`;
-            hudPrompt.style.top = `${yScreen}px`;
-            hudPrompt.style.opacity = '1';
+              hudPrompt.style.left = `${xScreen}px`;
+              hudPrompt.style.top = `${yScreen}px`;
+              hudPrompt.style.opacity = '1';
 
-            const hudTextEl = document.getElementById('hud-prompt-text');
-            if (hudTextEl && projects[activeProjectIndex]) {
-              hudTextEl.innerText = projects[activeProjectIndex].client.toUpperCase();
+              const hudTextEl = document.getElementById('hud-prompt-text');
+              if (hudTextEl && projects[activeProjectIndex]) {
+                hudTextEl.innerText = projects[activeProjectIndex].client.toUpperCase();
+              }
+            } else {
+              hudPrompt.style.opacity = '0';
             }
-          } else {
-            hudPrompt.style.opacity = '0';
           }
         }
 
