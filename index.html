@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Brissette — UX Designer</title>
+    <title>Matt Brissette — UX Designer/title>
     
     <link rel="preconnect" href="https://mbrissette.x02.me" crossorigin>
     <link rel="dns-prefetch" href="https://mbrissette.x02.me">
@@ -1112,8 +1112,40 @@
                 </div>
             </article>
 
-            <!-- PROJECT 6: Bentley Montreal (Large Hero Left, 2 Stacked Right) -->
-            <article class="project-item space-y-4 transition-all duration-300 reveal-on-scroll" data-project="bentley" data-context="06 / 06 Bentley Montreal">
+            <!-- PROJECT 6: RVezy (Large Hero Left, 2 Stacked Right) -->
+            <article class="project-item space-y-4 transition-all duration-300 reveal-on-scroll" data-project="rvezy" data-context="06 / 07 RVezy">
+                <div class="rocketair-showcase">
+                    <div class="project-preview-card rocketair-grid cursor-pointer group" onclick="openCaseStudy('rvezy')">
+                        <!-- 1 Large Hero Left -->
+                        <div class="rocketair-large-item">
+                            <img src="https://mbrissette.x02.me/i/yAKA76.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/1200x675/18181b/ffffff?text=RVezy+1'" alt="RVezy 1" class="w-full h-full object-cover" />
+                        </div>
+
+                        <!-- 2 Stacked 16:9 Right -->
+                        <div class="rocketair-small-stack">
+                            <div class="rocketair-small-item">
+                                <img src="https://mbrissette.x02.me/i/miPq1T.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x338/18181b/ffffff?text=RVezy+2'" alt="RVezy 2" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="rocketair-small-item">
+                                <img src="https://mbrissette.x02.me/i/oahDI6.webp" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://placehold.co/600x338/18181b/ffffff?text=RVezy+3'" alt="RVezy 3" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rocketair-action-bar">
+                        <p data-i18n="card_rvezy_desc" class="rocketair-action-text text-zinc-300 max-w-3xl">
+                            <span class="font-bold text-white">RVezy.</span> Scaling North America’s leading peer-to-peer RV rental marketplace across web and mobile.
+                        </p>
+                        <button type="button" onclick="openCaseStudy('rvezy')" class="rocketair-view-btn self-start sm:self-center shrink-0">
+                            <span data-i18n="btn_view_case_study">View case study</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4 opacity-80"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 7: Bentley Montreal (Large Hero Left, 2 Stacked Right) -->
+            <article class="project-item space-y-4 transition-all duration-300 reveal-on-scroll" data-project="bentley" data-context="07 / 07 Bentley Montreal">
                 <div class="rocketair-showcase">
                     <div class="project-preview-card rocketair-grid cursor-pointer group" onclick="openCaseStudy('bentley')">
                         <!-- 1 Large Hero Left -->
@@ -1685,6 +1717,78 @@
         </div>
     </template>
 
+    <template id="tmpl-case-study-rvezy">
+        <div class="space-y-12 sm:space-y-16 site-container mx-auto pt-2 sm:pt-4 pb-12">
+            <header class="space-y-8">
+                <div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white font-sans">RVezy</h1>
+                    <span data-i18n="cs_rvezy_badge" class="modal-label-badge">Travel &amp; Peer-to-Peer Marketplace</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 pt-2">
+                    <div class="lg:col-span-8 space-y-5 text-base sm:text-lg text-zinc-200 font-normal leading-relaxed">
+                        <p data-i18n="cs_rvezy_p1">
+                            RVezy is North America’s largest peer-to-peer RV rental marketplace, connecting travelers with local RV owners across Canada and the United States.
+                        </p>
+                        <p data-i18n="cs_rvezy_p2">
+                            I worked on evolving the core booking experience, search discovery, and host listing management flows across web and mobile—making it easier for first-time renters to find the right vehicle and book with confidence.
+                        </p>
+                        <p data-i18n="cs_rvezy_p3">
+                            Through user research, iterative prototyping, and a unified component system, we streamlined trip planning, insurance transparency, and host-guest communication at scale.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 space-y-3">
+                        <span data-i18n="cs_contributions_label" class="block font-mono text-xs uppercase tracking-wider text-zinc-400 font-semibold">// CONTRIBUTIONS:</span>
+                        <ul class="space-y-2 text-base sm:text-lg font-medium text-white font-sans">
+                            <li data-i18n="cs_rvezy_c1">Product Design (Web &amp; Mobile)</li>
+                            <li data-i18n="cs_rvezy_c2">Search &amp; Booking Flows</li>
+                            <li data-i18n="cs_rvezy_c3">Design System</li>
+                            <li data-i18n="cs_rvezy_c4">Prototyping &amp; User Testing</li>
+                            <li data-i18n="cs_rvezy_c5">Host &amp; Renter Experience</li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <div class="space-y-[64px] sm:space-y-[72px] pt-4">
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/yAKA76.webp" alt="RVezy 1" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/miPq1T.webp" alt="RVezy 2" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/oahDI6.webp" alt="RVezy 3" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/X6jtwf.webp" alt="RVezy 4" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/Cn2QKI.webp" alt="RVezy 5" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/LjNS9k.webp" alt="RVezy 6" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/lDKiEH.webp" alt="RVezy 7" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/wDQSU2.webp" alt="RVezy 8" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/SJlC7N.webp" alt="RVezy 9" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/WidgPc.webp" alt="RVezy 10" class="w-full h-full object-cover" />
+                </div>
+                <div class="modal-media-item">
+                    <img src="https://mbrissette.x02.me/i/RU2nYl.webp" alt="RVezy 11" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </template>
+
     <template id="tmpl-case-study-trailertrader">
         <div class="space-y-12 sm:space-y-16 site-container mx-auto pt-2 sm:pt-4 pb-12">
             <header class="space-y-8">
@@ -2102,7 +2206,7 @@
         }
 
         /* Fullscreen Case Study Modal Logic */
-        const PROJECT_KEYS = ['focusvision', 'carms', 'trailertrader', 'blockfi', 'olive', 'bentley'];
+        const PROJECT_KEYS = ['focusvision', 'carms', 'trailertrader', 'blockfi', 'olive', 'rvezy', 'bentley'];
         let currentModalProjectIndex = 0;
 
         function openCaseStudy(projectId) {
@@ -2588,6 +2692,7 @@
                 card_trailertrader_desc: `<span class="font-bold text-white">TrailerTrader.</span> Evolving North America’s largest trailer marketplace with guided recommendations, dealer dashboards, and mobile-first conversions.`,
                 card_bentley_desc: `<span class="font-bold text-white">Bentley Montreal.</span> Designing a VIP automotive client app to showcase new models, invite owners to test drives, schedule service appointments, and nurture long-term customer relationships.`,
                 card_olive_desc: `<span class="font-bold text-white">Olive.</span> Making online shopping a more sustainable experience`,
+                card_rvezy_desc: `<span class="font-bold text-white">RVezy.</span> Scaling North America’s leading peer-to-peer RV rental marketplace across web and mobile.`,
                 section_lab: "Lab",
                 lab_larus_p1: "Trade show conversations are short, and complex enterprise software is hard to explain in a few minutes. As design engineer, I designed and built an interactive 3D exhibition experience from scratch, launched live alongside Larus's physical booth on the floor at CANSEC, Canada's largest defence and security trade show.",
                 lab_larus_p2: "The build combines storytelling, product demos, downloadable resources, and lead capture into one immersive experience, developed with AI-assisted tooling (Gemini + Claude) and built to be re-skinned for future shows.",
@@ -2658,6 +2763,15 @@
                 cs_olive_c3: "Iconography",
                 cs_olive_c4: "Art Direction",
                 cs_olive_c5: "Brand Guidelines",
+                cs_rvezy_badge: "Travel & Peer-to-Peer Marketplace",
+                cs_rvezy_p1: "RVezy is North America’s largest peer-to-peer RV rental marketplace, connecting travelers with local RV owners across Canada and the United States.",
+                cs_rvezy_p2: "I worked on evolving the core booking experience, search discovery, and host listing management flows across web and mobile—making it easier for first-time renters to find the right vehicle and book with confidence.",
+                cs_rvezy_p3: "Through user research, iterative prototyping, and a unified component system, we streamlined trip planning, insurance transparency, and host-guest communication at scale.",
+                cs_rvezy_c1: "Product Design (Web & Mobile)",
+                cs_rvezy_c2: "Search & Booking Flows",
+                cs_rvezy_c3: "Design System",
+                cs_rvezy_c4: "Prototyping & User Testing",
+                cs_rvezy_c5: "Host & Renter Experience",
                 cs_tt_badge: "B2B/B2C Marketplace",
                 cs_tt_p1: "As TrailerTrader became the leading marketplace in its category, its existing product needed to evolve to support increased traffic, modern buyer expectations, and a more sophisticated dealer ecosystem.",
                 cs_tt_p2: "A major hurdle for many buyers was feeling overwhelmed by technical specs and unsure of which category suited their needs. To solve this, we introduced a guided recommendation tool that lets shoppers answer a few quick questions about their haul, towing capacity, and usage, instantly pointing them to the ideal trailer type.",
@@ -2689,6 +2803,7 @@
                 card_trailertrader_desc: `<span class="font-bold text-white">TrailerTrader.</span> Faire évoluer la plus grande place de marché de remorques en Amérique du Nord avec des recommandations guidées, des tableaux de bord concessionnaires et une expérience axée sur le mobile.`,
                 card_bentley_desc: `<span class="font-bold text-white">Bentley Montréal.</span> Concevoir une application client automobile VIP pour présenter les nouveaux modèles, inviter les propriétaires à des essais routiers, planifier les rendez-vous d'entretien et entretenir des relations clients durables.`,
                 card_olive_desc: `<span class="font-bold text-white">Olive.</span> Faire du magasinage en ligne une expérience plus durable.`,
+                card_rvezy_desc: `<span class="font-bold text-white">RVezy.</span> Faire évoluer la plus grande place de marché de location de VR entre particuliers en Amérique du Nord sur le web et le mobile.`,
                 section_lab: "Labo",
                 lab_larus_p1: "Les échanges lors des salons professionnels sont brefs, et les logiciels d'entreprise complexes sont difficiles à expliquer en quelques minutes. En tant que design engineer, j'ai conçu et développé de A à Z une expérience d'exposition 3D interactive, lancée en direct aux côtés du kiosque physique de Larus lors de CANSEC, le plus grand salon de la défense et de la sécurité au Canada.",
                 lab_larus_p2: "Le projet réunit narration, démonstrations de produits, ressources téléchargeables et capture de prospects dans une seule expérience immersive, développée avec des outils assistés par l'IA (Gemini + Claude) et pensée pour être facilement adaptée à de futurs événements.",
@@ -2759,6 +2874,15 @@
                 cs_olive_c3: "Iconographie",
                 cs_olive_c4: "Direction artistique",
                 cs_olive_c5: "Directives de marque",
+                cs_rvezy_badge: "Voyage et place de marché entre particuliers",
+                cs_rvezy_p1: "RVezy est la plus grande place de marché de location de véhicules récréatifs entre particuliers en Amérique du Nord, mettant en relation des voyageurs avec des propriétaires locaux partout au Canada et aux États-Unis.",
+                cs_rvezy_p2: "J'ai contribué à l'évolution de l'expérience de réservation, de la recherche et de la gestion des annonces hôtes sur le web et le mobile, permettant aux voyageurs novices de trouver le véhicule idéal et de réserver en toute confiance.",
+                cs_rvezy_p3: "Grâce à la recherche utilisateur, au prototypage itératif et à un système de composants unifié, nous avons simplifié la planification de voyages, la transparence des assurances et la communication entre hôtes et locataires à grande échelle.",
+                cs_rvezy_c1: "Design produit (Web et Mobile)",
+                cs_rvezy_c2: "Parcours de recherche et réservation",
+                cs_rvezy_c3: "Système de design",
+                cs_rvezy_c4: "Prototypage et tests utilisateurs",
+                cs_rvezy_c5: "Expérience hôte et locataire",
                 cs_tt_badge: "Place de marché B2B/B2C",
                 cs_tt_p1: "Alors que TrailerTrader s'imposait comme la place de marché de référence dans sa catégorie, son produit existant devait évoluer pour soutenir une hausse du trafic, les attentes modernes des acheteurs et un écosystème de concessionnaires plus avancé.",
                 cs_tt_p2: "Un obstacle majeur pour de nombreux acheteurs était de se sentir dépassés par les spécifications techniques et d'hésiter sur la catégorie adaptée à leurs besoins. Pour y remédier, nous avons créé un outil de recommandation guidé permettant aux acheteurs de répondre à quelques questions rapides sur leur chargement, leur capacité de remorquage et leur usage afin d'identifier instantanément le type de remorque idéal.",
@@ -2780,7 +2904,8 @@
             'card_carms_desc',
             'card_trailertrader_desc',
             'card_bentley_desc',
-            'card_olive_desc'
+            'card_olive_desc',
+            'card_rvezy_desc'
         ]);
 
         function applyTranslationsToContainer(root) {
